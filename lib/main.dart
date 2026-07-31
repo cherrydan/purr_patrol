@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'l10n/app_localizations.dart'; // Наш сгенерированный класс
+import 'screens/main_tab_screen.dart';
+   
+
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,19 +38,7 @@ class PurrPatrolApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: Scaffold(
-        body: Center(
-          child: Builder(
-            builder: (context) {
-              final l10n = AppLocalizations.of(context)!;
-              return Text(
-                l10n.appTitle,
-                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              );
-            },
-          ),
-        ),
-      ),
+      home: const MainTabScreen(),
     );
   }
 }
