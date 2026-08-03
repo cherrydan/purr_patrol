@@ -32,8 +32,10 @@ dependencies:
     sdk: flutter
   flutter_localizations: # 🟢 Наша локализация
     sdk: flutter
-
+  flutter_map: ^6.1.0
+  latlong2: ^0.9.1
   # Твои другие зависимости (пока их нет)
+  logger:
 
 
   # The following adds the Cupertino Icons font to your application.
