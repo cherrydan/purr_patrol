@@ -123,6 +123,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Profile'**
   String get profileTab;
+
+  /// No description provided for @catStatusHealthy.
+  ///
+  /// In en, this message translates to:
+  /// **'Healthy'**
+  String get catStatusHealthy;
+
+  /// No description provided for @catStatusDangerDogs.
+  ///
+  /// In en, this message translates to:
+  /// **'⚠️ Danger (Dogs)'**
+  String get catStatusDangerDogs;
+
+  /// No description provided for @catStatusLostPet.
+  ///
+  /// In en, this message translates to:
+  /// **'🔍 Lost Pet'**
+  String get catStatusLostPet;
+
+  /// No description provided for @photoUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Photo unavailable'**
+  String get photoUnavailable;
+
+  /// No description provided for @helpTheCatButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Help the cat'**
+  String get helpTheCatButton;
 }
 
 class _AppLocalizationsDelegate

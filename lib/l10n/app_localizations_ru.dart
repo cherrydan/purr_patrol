@@ -19,4 +19,19 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get profileTab => 'Профиль';
+
+  @override
+  String get catStatusHealthy => 'Здоров';
+
+  @override
+  String get catStatusDangerDogs => '⚠️ Опасность (Собаки)';
+
+  @override
+  String get catStatusLostPet => '🔍 Потеряшка';
+
+  @override
+  String get photoUnavailable => 'Фото пока отсутствует';
+
+  @override
+  String get helpTheCatButton => 'Помочь котику';
 }

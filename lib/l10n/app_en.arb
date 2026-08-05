@@ -3,5 +3,11 @@
   "appTitle": "PurrPatrol: Cat Locator 🐾",
   "mapTab": "Map",
   "feedTab": "SOS Feed",
-  "profileTab": "Profile"
+  "profileTab": "Profile",
+  "catStatusHealthy": "Healthy",
+  "catStatusDangerDogs": "⚠️ Danger (Dogs)",
+  "catStatusLostPet": "🔍 Lost Pet",
+  "photoUnavailable": "Photo unavailable",
+  "helpTheCatButton": "Help the cat"
+
 }

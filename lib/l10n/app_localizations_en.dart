@@ -19,4 +19,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get profileTab => 'Profile';
+
+  @override
+  String get catStatusHealthy => 'Healthy';
+
+  @override
+  String get catStatusDangerDogs => '⚠️ Danger (Dogs)';
+
+  @override
+  String get catStatusLostPet => '🔍 Lost Pet';
+
+  @override
+  String get photoUnavailable => 'Photo unavailable';
+
+  @override
+  String get helpTheCatButton => 'Help the cat';
 }

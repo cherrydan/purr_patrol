@@ -3,5 +3,11 @@
   "appTitle": "PurrPatrol: Кот-Локатор 🐾",
   "mapTab": "Карта",
   "feedTab": "SOS Лента",
-  "profileTab": "Профиль"
+  "profileTab": "Профиль",
+  "catStatusHealthy": "Здоров",
+  "catStatusDangerDogs": "⚠️ Опасность (Собаки)",
+  "catStatusLostPet": "🔍 Потеряшка",
+  "photoUnavailable": "Фото пока отсутствует",
+  "helpTheCatButton": "Помочь котику"
+
 }

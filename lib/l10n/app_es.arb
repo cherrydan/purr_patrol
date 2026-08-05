@@ -3,5 +3,11 @@
   "appTitle": "PurrPatrol: Localizador de Gatos 🐾",
   "mapTab": "Mapa",
   "feedTab": "Feed SOS",
-  "profileTab": "Perfil"
+  "profileTab": "Perfil",
+  "catStatusHealthy": "Sano",
+  "catStatusDangerDogs": "⚠️ Peligro (Perros)",
+  "catStatusLostPet": "🔍 Mascota Perdida",
+  "photoUnavailable": "Foto no disponible",
+  "helpTheCatButton": "Ayudar al gato"
+
 }
