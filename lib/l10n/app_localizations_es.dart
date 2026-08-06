@@ -34,4 +34,10 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get helpTheCatButton => 'Ayudar al gato';
+
+  @override
+  String get microchipped => 'Con microchip 🔖';
+
+  @override
+  String get sterilized => 'Esterilizado ✂️';
 }

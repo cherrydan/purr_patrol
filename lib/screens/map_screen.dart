@@ -30,6 +30,8 @@ class _MapScreenState extends State<MapScreen> {
       status: CatStatus.healthy,
       riskLevel: RiskLevel.safe,
       gender: CatGender.male,
+      isChipped: true,
+      isSterilized: true,
       authorId: 'admin',
       createdAt: DateTime.now(),
     ),
@@ -169,6 +171,38 @@ class _MapScreenState extends State<MapScreen> {
               ),
               const SizedBox(height: 12),
 
+              // 🟢 Блок бейджиков (Чипирован / Стерилизован)
+              if (cat.isChipped || cat.isSterilized)
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: [
+                    if (cat.isChipped)
+                      Chip(
+                        avatar: const Icon(Icons.qr_code_2_rounded, size: 18, color: Colors.blue),
+                        label: Text(
+                          l10n.microchipped,
+                          style: const TextStyle(fontSize: 12, color: Colors.blue),
+                        ),
+                        backgroundColor: Colors.blue.withValues(alpha: 0.1),
+                        side: BorderSide(color: Colors.blue.withValues(alpha: 0.3)),
+                      ),
+                    if (cat.isSterilized)
+                      Chip(
+                        avatar: const Icon(Icons.content_cut_rounded, size: 16, color: Colors.purple),
+                        label: Text(
+                          l10n.sterilized,
+                          style: const TextStyle(fontSize: 12, color: Colors.purple),
+                        ),
+                        backgroundColor: Colors.purple.withValues(alpha: 0.1),
+                        side: BorderSide(color: Colors.purple.withValues(alpha: 0.3)),
+                      ),
+                  ],
+                ),
+
+              const SizedBox(height: 20), 
+
+
               // Описание
               Text(
                 cat.description,
@@ -214,9 +248,10 @@ class _MapScreenState extends State<MapScreen> {
         children: [
           // 1. Слой плиток карты (улицы)
           TileLayer(
-            urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-            userAgentPackageName: 'com.purrpatrol.purr_patrol',
+          urlTemplate: 'https://a.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png',
+          userAgentPackageName: 'com.purrpatrol.purr_patrol',
           ),
+
           
           // 2. 🟢 Слой наших меток с котиками
           MarkerLayer(

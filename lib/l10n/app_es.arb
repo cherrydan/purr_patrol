@@ -8,6 +8,9 @@
   "catStatusDangerDogs": "⚠️ Peligro (Perros)",
   "catStatusLostPet": "🔍 Mascota Perdida",
   "photoUnavailable": "Foto no disponible",
-  "helpTheCatButton": "Ayudar al gato"
+  "helpTheCatButton": "Ayudar al gato",
+  "microchipped": "Con microchip 🔖",
+  "sterilized": "Esterilizado ✂️"
+
 
 }

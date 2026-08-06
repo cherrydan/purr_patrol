@@ -8,6 +8,9 @@
   "catStatusDangerDogs": "⚠️ Опасность (Собаки)",
   "catStatusLostPet": "🔍 Потеряшка",
   "photoUnavailable": "Фото пока отсутствует",
-  "helpTheCatButton": "Помочь котику"
+  "helpTheCatButton": "Помочь котику",
+  "microchipped": "Чипирован 🔖",
+  "sterilized": "Стерилизован ✂️"
+
 
 }

@@ -13,6 +13,8 @@ class CatMarker {
   final CatGender gender;
   final String authorId;
   final DateTime createdAt;
+  final bool isChipped;
+  final bool isSterilized;
 
   const CatMarker({
     required this.id,
@@ -26,6 +28,8 @@ class CatMarker {
     required this.gender,
     required this.authorId,
     required this.createdAt,
+    this.isChipped = false,
+    this.isSterilized = false,
   });
 
     // 🟢 Превращаем объект в Map для сохранения в Firestore
@@ -42,6 +46,9 @@ class CatMarker {
       'gender': gender.name, // Enum -> String
       'authorId': authorId,
       'createdAt': createdAt.toIso8601String(), // DateTime -> String
+      'isChipped': isChipped,
+      'isSterilized': isSterilized,
+
     };
   }
 
@@ -58,7 +65,10 @@ class CatMarker {
       riskLevel: RiskLevel.values.byName(map['riskLevel']), // String -> Enum
       gender: CatGender.values.byName(map['gender']), // String -> Enum
       authorId: map['authorId'],
-      createdAt: DateTime.parse(map['createdAt']), // String -> DateTime
+      createdAt: DateTime.parse(map['createdAt']), // String -> DateTime,
+      isChipped: map['isChipped'] ?? false,
+      isSterilized: map['isSterilized'] ?? false,
+
     );
   }
 

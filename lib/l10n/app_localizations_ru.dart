@@ -34,4 +34,10 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get helpTheCatButton => 'Помочь котику';
+
+  @override
+  String get microchipped => 'Чипирован 🔖';
+
+  @override
+  String get sterilized => 'Стерилизован ✂️';
 }

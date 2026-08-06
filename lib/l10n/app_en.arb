@@ -8,6 +8,9 @@
   "catStatusDangerDogs": "⚠️ Danger (Dogs)",
   "catStatusLostPet": "🔍 Lost Pet",
   "photoUnavailable": "Photo unavailable",
-  "helpTheCatButton": "Help the cat"
+  "helpTheCatButton": "Help the cat",
+  "microchipped": "Microchipped 🔖",
+  "sterilized": "Sterilized ✂️"
+
 
 }

@@ -153,6 +153,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Help the cat'**
   String get helpTheCatButton;
+
+  /// No description provided for @microchipped.
+  ///
+  /// In en, this message translates to:
+  /// **'Microchipped 🔖'**
+  String get microchipped;
+
+  /// No description provided for @sterilized.
+  ///
+  /// In en, this message translates to:
+  /// **'Sterilized ✂️'**
+  String get sterilized;
 }
 
 class _AppLocalizationsDelegate
