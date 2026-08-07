@@ -51,7 +51,7 @@ class _MapScreenState extends State<MapScreen> {
       id: '3',
       latitude: 40.419,
       longitude: -3.708,
-      title: 'Осторожно: собаки!',
+      title: 'Злые собаки!',
       description: 'Местные жители часто выгуливают бойцовских собак без поводка.',
       status: CatStatus.needsFood,
       riskLevel: RiskLevel.urgentDanger, // 🔴 Зона риска

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1001419947144",
+    "project_id": "purrpatrol-26f04",
+    "storage_bucket": "purrpatrol-26f04.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1001419947144:android:f14964f99e234e6b10f33d",
+        "android_client_info": {
+          "package_name": "com.purrpatrol.purrpatrol"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtDYV5tDl2qAYaBwwTR9Om3l9BAiYPM6M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

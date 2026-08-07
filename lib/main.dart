@@ -2,11 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'l10n/app_localizations.dart'; // Наш сгенерированный класс
 import 'screens/main_tab_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
    
 
 
-void main() {
+void main() async {
+  // 🟢 Обязательная инициализация связок Flutter
   WidgetsFlutterBinding.ensureInitialized();
+
+  // 🟢 Инициализируем Firebase для Android/iOS
+  await Firebase.initializeApp();
+
   runApp(const PurrPatrolApp());
 }
 
