@@ -6,6 +6,9 @@ import 'package:purr_patrol/models/cat_enums.dart';
 import 'package:purr_patrol/models/cat_marker.dart';
 import 'package:purr_patrol/services/cat_service.dart';
 import '../services/app_logger.dart';
+import 'add_cat_screen.dart';
+   
+
    
 
 
@@ -200,6 +203,9 @@ class _MapScreenState extends State<MapScreen> {
     
   @override
   Widget build(BuildContext context) {
+
+    final l10n = AppLocalizations.of(context)!;
+
     return Scaffold(
       body: FlutterMap(
         options: MapOptions(
@@ -267,6 +273,28 @@ class _MapScreenState extends State<MapScreen> {
           ),
         ],
       ),
+
+      // 🟢 НАША КНОПКА ДОБАВЛЕНИЯ:
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          logger.i("Нажата кнопка добавления нового котика");
+          // На следующем микро-шаге здесь откроем форму создания!
+          Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AddCatScreen(
+            latitude: _initialCenter.latitude,
+            longitude: _initialCenter.longitude,
+         ),
+       ),
+     );
+        },
+        backgroundColor: const Color(0xFF2ECC71), // Наш эко-зеленый
+        foregroundColor: Colors.white,
+        icon: const Icon(Icons.add_location_alt_rounded),
+        label: Text(l10n.addCatMarker),
+      ),
+    
     );
   }
 }

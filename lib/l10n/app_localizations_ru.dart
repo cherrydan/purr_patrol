@@ -40,4 +40,19 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get sterilized => 'Стерилизован ✂️';
+
+  @override
+  String get addCatMarker => 'Добавить котика';
+
+  @override
+  String get addCatTitle => 'Новая метка котика 🐾';
+
+  @override
+  String get catTitleInput => 'Название (например: Пушок у пекарни)';
+
+  @override
+  String get catDescriptionInput => 'Описание и приметы';
+
+  @override
+  String get saveCatButton => 'Сохранить метку';
 }

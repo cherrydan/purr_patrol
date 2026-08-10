@@ -10,7 +10,15 @@
   "photoUnavailable": "Photo unavailable",
   "helpTheCatButton": "Help the cat",
   "microchipped": "Microchipped 🔖",
-  "sterilized": "Sterilized ✂️"
-
+  "sterilized": "Sterilized ✂️",
+  "addCatMarker": "Add Cat",
+  "addCatTitle": "New Cat Marker 🐾",
+  "catTitleInput": "Title (e.g., Fluffy by the bakery)",
+  "catDescriptionInput": "Description & traits",
+  "saveCatButton": "Save Marker",
+  "addCatTitle": "New Cat Marker 🐾",
+  "catTitleInput": "Title (e.g., Fluffy by the bakery)",
+  "catDescriptionInput": "Description & traits",
+  "saveCatButton": "Save Marker"
 
 }

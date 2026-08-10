@@ -165,6 +165,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sterilized ✂️'**
   String get sterilized;
+
+  /// No description provided for @addCatMarker.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Cat'**
+  String get addCatMarker;
+
+  /// No description provided for @addCatTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New Cat Marker 🐾'**
+  String get addCatTitle;
+
+  /// No description provided for @catTitleInput.
+  ///
+  /// In en, this message translates to:
+  /// **'Title (e.g., Fluffy by the bakery)'**
+  String get catTitleInput;
+
+  /// No description provided for @catDescriptionInput.
+  ///
+  /// In en, this message translates to:
+  /// **'Description & traits'**
+  String get catDescriptionInput;
+
+  /// No description provided for @saveCatButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Marker'**
+  String get saveCatButton;
 }
 
 class _AppLocalizationsDelegate

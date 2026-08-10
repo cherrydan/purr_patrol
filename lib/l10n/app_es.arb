@@ -10,7 +10,13 @@
   "photoUnavailable": "Foto no disponible",
   "helpTheCatButton": "Ayudar al gato",
   "microchipped": "Con microchip 🔖",
-  "sterilized": "Esterilizado ✂️"
+  "sterilized": "Esterilizado ✂️",
+  "addCatMarker": "Añadir gato",
+  "addCatTitle": "Nueva marca de gato 🐾",
+  "catTitleInput": "Título (ej.: Pelusa en la panadería)",
+  "catDescriptionInput": "Descripción y rasgos",
+  "saveCatButton": "Guardar marca"
+
 
 
 }

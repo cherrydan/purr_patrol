@@ -10,7 +10,14 @@
   "photoUnavailable": "Фото пока отсутствует",
   "helpTheCatButton": "Помочь котику",
   "microchipped": "Чипирован 🔖",
-  "sterilized": "Стерилизован ✂️"
+  "sterilized": "Стерилизован ✂️",
+  "addCatMarker": "Добавить котика",
+  "addCatTitle": "Новая метка котика 🐾",
+  "catTitleInput": "Название (например: Пушок у пекарни)",
+  "catDescriptionInput": "Описание и приметы",
+  "saveCatButton": "Сохранить метку"
+
+
 
 
 }

@@ -53,24 +53,36 @@ class CatMarker {
   }
 
   // 🟢 Собираем объект из Map, полученного из Firestore
+    // 🟢 Пуленепробиваемый сборщик объекта из Map
   factory CatMarker.fromMap(Map<String, dynamic> map) {
     return CatMarker(
-      id: map['id'],
-      latitude: map['latitude'],
-      longitude: map['longitude'],
-      title: map['title'],
-      description: map['description'],
+      id: map['id'] ?? '',
+      latitude: (map['latitude'] as num?)?.toDouble() ?? 0.0,
+      longitude: (map['longitude'] as num?)?.toDouble() ?? 0.0,
+      title: map['title'] ?? 'Без названия',
+      description: map['description'] ?? '',
       imageUrl: map['imageUrl'],
-      status: CatStatus.values.byName(map['status']), // String -> Enum
-      riskLevel: RiskLevel.values.byName(map['riskLevel']), // String -> Enum
-      gender: CatGender.values.byName(map['gender']), // String -> Enum
-      authorId: map['authorId'],
-      createdAt: DateTime.parse(map['createdAt']), // String -> DateTime,
+      status: CatStatus.values.firstWhere(
+        (e) => e.name == map['status'],
+        orElse: () => CatStatus.healthy, // Фолбэк, если статус не совпал
+      ),
+      riskLevel: RiskLevel.values.firstWhere(
+        (e) => e.name == map['riskLevel'],
+        orElse: () => RiskLevel.safe, // Фолбэк, если риск не совпал
+      ),
+      gender: CatGender.values.firstWhere(
+        (e) => e.name == map['gender'],
+        orElse: () => CatGender.unknown, // Фолбэк, если пол не совпал
+      ),
       isChipped: map['isChipped'] ?? false,
       isSterilized: map['isSterilized'] ?? false,
-
+      authorId: map['authorId'] ?? '',
+      createdAt: map['createdAt'] != null 
+          ? DateTime.tryParse(map['createdAt']) ?? DateTime.now()
+          : DateTime.now(),
     );
   }
+
 
 
 }

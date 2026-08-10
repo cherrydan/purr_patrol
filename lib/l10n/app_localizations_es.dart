@@ -40,4 +40,19 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get sterilized => 'Esterilizado ✂️';
+
+  @override
+  String get addCatMarker => 'Añadir gato';
+
+  @override
+  String get addCatTitle => 'Nueva marca de gato 🐾';
+
+  @override
+  String get catTitleInput => 'Título (ej.: Pelusa en la panadería)';
+
+  @override
+  String get catDescriptionInput => 'Descripción y rasgos';
+
+  @override
+  String get saveCatButton => 'Guardar marca';
 }
