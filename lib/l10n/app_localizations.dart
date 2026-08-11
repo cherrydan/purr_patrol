@@ -195,6 +195,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Save Marker'**
   String get saveCatButton;
+
+  /// No description provided for @catLatCoord.
+  ///
+  /// In en, this message translates to:
+  /// **'Latitude'**
+  String get catLatCoord;
+
+  /// No description provided for @catLongCoord.
+  ///
+  /// In en, this message translates to:
+  /// **'Longitude'**
+  String get catLongCoord;
+
+  /// No description provided for @enterPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Please, enter a value'**
+  String get enterPrompt;
+
+  /// No description provided for @valueError.
+  ///
+  /// In en, this message translates to:
+  /// **'Incorrect number format'**
+  String get valueError;
+
+  /// No description provided for @latRangeError.
+  ///
+  /// In en, this message translates to:
+  /// **'Latitude range from -90.0 to 90.0'**
+  String get latRangeError;
+
+  /// No description provided for @longRangeError.
+  ///
+  /// In en, this message translates to:
+  /// **'Longitude range from -180.0 to 180.0'**
+  String get longRangeError;
 }
 
 class _AppLocalizationsDelegate

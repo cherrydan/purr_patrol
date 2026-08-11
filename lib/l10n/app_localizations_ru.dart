@@ -55,4 +55,22 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get saveCatButton => 'Сохранить метку';
+
+  @override
+  String get catLatCoord => 'Широта';
+
+  @override
+  String get catLongCoord => 'Долгота';
+
+  @override
+  String get enterPrompt => 'Пожалуйста, введите число';
+
+  @override
+  String get valueError => 'Некоректный формат числа';
+
+  @override
+  String get latRangeError => 'Диапазон для широты: -90.0 до 90.0';
+
+  @override
+  String get longRangeError => 'Диапазон для долготы: -180.0 до 180.0';
 }

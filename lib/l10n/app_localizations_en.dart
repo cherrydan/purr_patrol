@@ -55,4 +55,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get saveCatButton => 'Save Marker';
+
+  @override
+  String get catLatCoord => 'Latitude';
+
+  @override
+  String get catLongCoord => 'Longitude';
+
+  @override
+  String get enterPrompt => 'Please, enter a value';
+
+  @override
+  String get valueError => 'Incorrect number format';
+
+  @override
+  String get latRangeError => 'Latitude range from -90.0 to 90.0';
+
+  @override
+  String get longRangeError => 'Longitude range from -180.0 to 180.0';
 }

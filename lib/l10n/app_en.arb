@@ -19,6 +19,12 @@
   "addCatTitle": "New Cat Marker 🐾",
   "catTitleInput": "Title (e.g., Fluffy by the bakery)",
   "catDescriptionInput": "Description & traits",
-  "saveCatButton": "Save Marker"
+  "saveCatButton": "Save Marker",
+  "catLatCoord": "Latitude",
+  "catLongCoord": "Longitude",
+  "enterPrompt": "Please, enter a value",
+  "valueError": "Incorrect number format",
+  "latRangeError": "Latitude range from -90.0 to 90.0",
+  "longRangeError": "Longitude range from -180.0 to 180.0"
 
 }

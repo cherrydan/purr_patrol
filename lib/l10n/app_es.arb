@@ -15,8 +15,11 @@
   "addCatTitle": "Nueva marca de gato 🐾",
   "catTitleInput": "Título (ej.: Pelusa en la panadería)",
   "catDescriptionInput": "Descripción y rasgos",
-  "saveCatButton": "Guardar marca"
-
-
-
+  "saveCatButton": "Guardar marca",
+  "catLatCoord": "Latitud",
+  "catLongCoord": "Longitud",
+  "enterPrompt": "Por favor, introduzca un número",
+  "valueError": "Formato de número no válido",
+  "latRangeError": "Rango de latitud de -90.0 a 90.0",
+  "longRangeError": "Rango de longitud de -180.0 a 180.0"
 }

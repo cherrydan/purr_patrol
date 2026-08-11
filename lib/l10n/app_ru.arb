@@ -15,9 +15,11 @@
   "addCatTitle": "Новая метка котика 🐾",
   "catTitleInput": "Название (например: Пушок у пекарни)",
   "catDescriptionInput": "Описание и приметы",
-  "saveCatButton": "Сохранить метку"
-
-
-
-
+  "saveCatButton": "Сохранить метку",
+  "catLatCoord": "Широта",
+  "catLongCoord": "Долгота",
+  "enterPrompt": "Пожалуйста, введите число",
+  "valueError": "Некоректный формат числа",
+  "latRangeError": "Диапазон для широты: -90.0 до 90.0",
+  "longRangeError": "Диапазон для долготы: -180.0 до 180.0"
 }
