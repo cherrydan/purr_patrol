@@ -5,6 +5,7 @@
   "feedTab": "SOS Feed",
   "profileTab": "Profile",
   "catStatusLabel": "Cat Status",
+  "catStatusInjured": "Injured",
   "catStatusNeedsFood": "Needs Food or Water",
   "catStatusHealthy": "Healthy",
   "catStatusDangerDogs": "⚠️ Danger (Dogs)",
@@ -31,7 +32,11 @@
   "genderLabel": "Cat gender:",
   "genderMale": "Male ♂️",
   "genderFemale": "Female ♀️",
-  "genderUnknown": "❓"
+  "genderUnknown": "❓",
+  "riskLabel": "Risk level",
+  "riskSafe": "Safe 🟢",
+  "riskDogsNearby": "Dogs nearby 🟡",
+  "riskUrgentDanger": "URGENT DANGER 🔴"
 
 
 }

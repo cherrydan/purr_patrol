@@ -29,6 +29,10 @@ class _AddCatScreenState extends State<AddCatScreen> {
   bool isSterilized = false;
 
   CatGender _selectedGender = CatGender.unknown; // По умолчанию 'Неизвестно'
+  CatStatus _selectedStatus = CatStatus.healthy; // По умолчанию 'Здоров'
+  RiskLevel _selectedRiskLevel = RiskLevel.safe; // По умолчанию 'Безопасно'
+   
+
    
 
 
@@ -198,7 +202,86 @@ class _AddCatScreenState extends State<AddCatScreen> {
             selectedColor: Colors.grey.shade100, // Красивый цвет при выборе
             )
           ]),
-
+          // выпадающий список для выбора статуса кота
+          Text(
+                l10n.catStatusLabel, // "Статус котика:"
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
+          const SizedBox(height: 8),
+      
+          DropdownButtonFormField<CatStatus>(
+          initialValue: _selectedStatus,
+            decoration: InputDecoration(
+              labelText: l10n.catStatusLabel, // Например: "Статус котика"
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              prefixIcon: const Icon(Icons.info_outline_rounded),
+            ),
+            items: [
+              DropdownMenuItem(
+                value: CatStatus.healthy,
+                child: Text(l10n.catStatusHealthy), // "Здоров 🟢"
+              ),
+              DropdownMenuItem(
+                value: CatStatus.needsFood,
+                child: Text(l10n.catStatusNeedsFood), // "Нужен корм 🍲"
+              ),
+              DropdownMenuItem(
+                value: CatStatus.injured,
+                child: Text(l10n.catStatusInjured), // "Травмирован 🩹"
+              ),
+              DropdownMenuItem(
+                value: CatStatus.lostPet,
+                child: Text(l10n.catStatusLostPet), // "Потеряшка 🔍"
+              ),
+            ],
+            onChanged: (CatStatus? newStatus) {
+              if (newStatus != null) {
+                setState(() {
+                  _selectedStatus = newStatus;
+                });
+              }
+            },
+          ),
+          
+          Text(l10n.riskLabel,  style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
+          const SizedBox(height: 8),
+          
+          DropdownButtonFormField<RiskLevel>(
+          initialValue: _selectedRiskLevel,
+            decoration: InputDecoration(
+              labelText: l10n.riskLabel, // Например: "Уровень риска"
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              prefixIcon: const Icon(Icons.info_outline_rounded),
+            ),
+            items: [
+              DropdownMenuItem(
+                value: RiskLevel.safe,
+                child: Text(l10n.riskSafe), // "Безопасно 🟢"
+              ),
+              DropdownMenuItem(
+                value: RiskLevel.dogsNearby,
+                child: Text(l10n.riskDogsNearby), // "Псы рядом 🐕"
+              ),
+              
+              DropdownMenuItem(
+                value: RiskLevel.urgentDanger,
+                child: Text(l10n.riskUrgentDanger), // "Срочный риск 🔴"
+              ),
+            ],
+            onChanged: (RiskLevel? newLevel) {
+              if (newLevel != null) {
+                setState(() {
+                  _selectedRiskLevel = newLevel;
+                });
+              }
+            },
+          ),
+      
               // Чекбокс для Чипированного
               SwitchListTile(
                 title: Text(l10n.microchipped),
@@ -228,7 +311,7 @@ class _AddCatScreenState extends State<AddCatScreen> {
                  latitude: double.parse(_latitudeController.text.replaceAll(',', '.')), 
                  longitude: double.parse(_longitudeController.text.replaceAll(',', '.')), 
                  title: _titleController.text, description: _descriptionController.text, 
-                 status: CatStatus.healthy, riskLevel: RiskLevel.safe, 
+                 status: _selectedStatus, riskLevel: _selectedRiskLevel, 
                  gender: _selectedGender, isChipped: isChipped, isSterilized: isSterilized,
                  authorId: 'current_user', createdAt: DateTime.now()); // Собрали CatMarker
 

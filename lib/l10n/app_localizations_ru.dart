@@ -24,6 +24,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get catStatusLabel => 'Состояние котика';
 
   @override
+  String get catStatusInjured => 'Травмирован';
+
+  @override
   String get catStatusNeedsFood => 'Нужна пища или вода';
 
   @override
@@ -91,4 +94,16 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get genderUnknown => '❓';
+
+  @override
+  String get riskLabel => 'Уровень риска';
+
+  @override
+  String get riskSafe => 'Безопасно 🟢';
+
+  @override
+  String get riskDogsNearby => 'Рядом собаки 🟡';
+
+  @override
+  String get riskUrgentDanger => 'СРОЧНАЯ ОПАСНОСТЬ 🔴';
 }

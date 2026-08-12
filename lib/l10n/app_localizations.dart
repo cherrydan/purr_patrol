@@ -130,6 +130,12 @@ abstract class AppLocalizations {
   /// **'Cat Status'**
   String get catStatusLabel;
 
+  /// No description provided for @catStatusInjured.
+  ///
+  /// In en, this message translates to:
+  /// **'Injured'**
+  String get catStatusInjured;
+
   /// No description provided for @catStatusNeedsFood.
   ///
   /// In en, this message translates to:
@@ -267,6 +273,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'❓'**
   String get genderUnknown;
+
+  /// No description provided for @riskLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Risk level'**
+  String get riskLabel;
+
+  /// No description provided for @riskSafe.
+  ///
+  /// In en, this message translates to:
+  /// **'Safe 🟢'**
+  String get riskSafe;
+
+  /// No description provided for @riskDogsNearby.
+  ///
+  /// In en, this message translates to:
+  /// **'Dogs nearby 🟡'**
+  String get riskDogsNearby;
+
+  /// No description provided for @riskUrgentDanger.
+  ///
+  /// In en, this message translates to:
+  /// **'URGENT DANGER 🔴'**
+  String get riskUrgentDanger;
 }
 
 class _AppLocalizationsDelegate

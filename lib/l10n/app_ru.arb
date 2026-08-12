@@ -5,6 +5,7 @@
   "feedTab": "SOS Лента",
   "profileTab": "Профиль",
   "catStatusLabel": "Состояние котика",
+  "catStatusInjured": "Травмирован",
   "catStatusNeedsFood": "Нужна пища или вода",
   "catStatusHealthy": "Здоров",
   "catStatusDangerDogs": "⚠️ Опасность (Собаки)",
@@ -27,6 +28,10 @@
   "genderLabel": "Пол котика:",
   "genderMale": "Мальчик ♂️",
   "genderFemale": "Девочка ♀️",
-  "genderUnknown": "❓"
+  "genderUnknown": "❓",
+  "riskLabel": "Уровень риска",
+  "riskSafe": "Безопасно 🟢",
+  "riskDogsNearby": "Рядом собаки 🟡",
+  "riskUrgentDanger": "СРОЧНАЯ ОПАСНОСТЬ 🔴"
 
 }
