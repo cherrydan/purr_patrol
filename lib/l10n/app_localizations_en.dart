@@ -21,6 +21,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profileTab => 'Profile';
 
   @override
+  String get catStatusLabel => 'Cat Status';
+
+  @override
+  String get catStatusNeedsFood => 'Needs Food or Water';
+
+  @override
   String get catStatusHealthy => 'Healthy';
 
   @override
@@ -73,4 +79,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get longRangeError => 'Longitude range from -180.0 to 180.0';
+
+  @override
+  String get genderLabel => 'Cat gender:';
+
+  @override
+  String get genderMale => 'Male ♂️';
+
+  @override
+  String get genderFemale => 'Female ♀️';
+
+  @override
+  String get genderUnknown => '❓';
 }

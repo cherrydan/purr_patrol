@@ -28,6 +28,10 @@ class _AddCatScreenState extends State<AddCatScreen> {
   bool isChipped = false;
   bool isSterilized = false;
 
+  CatGender _selectedGender = CatGender.unknown; // По умолчанию 'Неизвестно'
+   
+
+
   @override
   void dispose() {
     _titleController.dispose();
@@ -88,9 +92,9 @@ class _AddCatScreenState extends State<AddCatScreen> {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  prefixIcon: const Icon(Icons.description_rounded),
+                  prefixIcon: const Icon(Icons.language_rounded),
                 ),
-              // keyboardType: const TextInputType.numberWithOptions(decimal: true), 
+              keyboardType: const TextInputType.numberWithOptions(decimal: true), 
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp(r'^\d*[.,]?\d*')),
                 ],
@@ -126,9 +130,9 @@ class _AddCatScreenState extends State<AddCatScreen> {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  prefixIcon: const Icon(Icons.description_rounded),
+                  prefixIcon: const Icon(Icons.language_rounded),
                 ),
-                //keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                keyboardType: const TextInputType.numberWithOptions(decimal: true),
                 inputFormatters: [
                   FilteringTextInputFormatter.allow(RegExp(r'^-?\d*[.,]?\d*')),
                 ],
@@ -152,6 +156,48 @@ class _AddCatScreenState extends State<AddCatScreen> {
                 return null; // Ошибок нет
                 }, // Конец валидации   
               ),
+
+              Text(l10n.genderLabel, style: const TextStyle(fontWeight: FontWeight.bold),),
+              const SizedBox(height: 8),
+              // ChoiceChip для выбора пола кота
+              Wrap(spacing: 8,children: [
+                ChoiceChip(
+                label: Text(l10n.genderMale),
+                selected: _selectedGender == CatGender.male, // Подсвечен, если выбран
+                onSelected: (bool selected) {
+                if (selected) {
+                setState(() {
+                _selectedGender = CatGender.male; // Обновляем состояние
+                });
+              }
+            },
+            selectedColor: Colors.blue.shade100, // Красивый цвет при выборе
+            ),
+            ChoiceChip(
+                label: Text(l10n.genderFemale),
+                selected: _selectedGender == CatGender.female, // Подсвечен, если выбран
+                onSelected: (bool selected) {
+                if (selected) {
+                setState(() {
+                _selectedGender = CatGender.female; // Обновляем состояние
+                });
+              }
+            },
+            selectedColor: Colors.pink.shade100, // Красивый цвет при выборе
+            ),
+            ChoiceChip(
+                label: Text(l10n.genderUnknown),
+                selected: _selectedGender == CatGender.unknown, // Подсвечен, если выбран
+                onSelected: (bool selected) {
+                if (selected) {
+                setState(() {
+                _selectedGender = CatGender.unknown; // Обновляем состояние
+                });
+              }
+            },
+            selectedColor: Colors.grey.shade100, // Красивый цвет при выборе
+            )
+          ]),
 
               // Чекбокс для Чипированного
               SwitchListTile(
@@ -183,7 +229,7 @@ class _AddCatScreenState extends State<AddCatScreen> {
                  longitude: double.parse(_longitudeController.text.replaceAll(',', '.')), 
                  title: _titleController.text, description: _descriptionController.text, 
                  status: CatStatus.healthy, riskLevel: RiskLevel.safe, 
-                 gender: CatGender.male, isChipped: isChipped, isSterilized: isSterilized,
+                 gender: _selectedGender, isChipped: isChipped, isSterilized: isSterilized,
                  authorId: 'current_user', createdAt: DateTime.now()); // Собрали CatMarker
 
                  await CatService().addCatMarker(newCat); // сохранили в Firestore

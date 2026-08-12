@@ -21,6 +21,12 @@ class AppLocalizationsEs extends AppLocalizations {
   String get profileTab => 'Perfil';
 
   @override
+  String get catStatusLabel => 'Estado de gatito';
+
+  @override
+  String get catStatusNeedsFood => 'Necesita comida o agua';
+
+  @override
   String get catStatusHealthy => 'Sano';
 
   @override
@@ -73,4 +79,16 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get longRangeError => 'Rango de longitud de -180.0 a 180.0';
+
+  @override
+  String get genderLabel => 'El género del gatito';
+
+  @override
+  String get genderMale => 'Macho ♂️';
+
+  @override
+  String get genderFemale => 'Hembra ♀️';
+
+  @override
+  String get genderUnknown => '❓';
 }

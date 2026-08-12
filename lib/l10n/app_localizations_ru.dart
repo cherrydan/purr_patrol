@@ -21,6 +21,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get profileTab => 'Профиль';
 
   @override
+  String get catStatusLabel => 'Состояние котика';
+
+  @override
+  String get catStatusNeedsFood => 'Нужна пища или вода';
+
+  @override
   String get catStatusHealthy => 'Здоров';
 
   @override
@@ -73,4 +79,16 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get longRangeError => 'Диапазон для долготы: -180.0 до 180.0';
+
+  @override
+  String get genderLabel => 'Пол котика:';
+
+  @override
+  String get genderMale => 'Мальчик ♂️';
+
+  @override
+  String get genderFemale => 'Девочка ♀️';
+
+  @override
+  String get genderUnknown => '❓';
 }

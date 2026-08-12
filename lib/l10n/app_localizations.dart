@@ -124,6 +124,18 @@ abstract class AppLocalizations {
   /// **'Profile'**
   String get profileTab;
 
+  /// No description provided for @catStatusLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cat Status'**
+  String get catStatusLabel;
+
+  /// No description provided for @catStatusNeedsFood.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs Food or Water'**
+  String get catStatusNeedsFood;
+
   /// No description provided for @catStatusHealthy.
   ///
   /// In en, this message translates to:
@@ -231,6 +243,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Longitude range from -180.0 to 180.0'**
   String get longRangeError;
+
+  /// No description provided for @genderLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cat gender:'**
+  String get genderLabel;
+
+  /// No description provided for @genderMale.
+  ///
+  /// In en, this message translates to:
+  /// **'Male ♂️'**
+  String get genderMale;
+
+  /// No description provided for @genderFemale.
+  ///
+  /// In en, this message translates to:
+  /// **'Female ♀️'**
+  String get genderFemale;
+
+  /// No description provided for @genderUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'❓'**
+  String get genderUnknown;
 }
 
 class _AppLocalizationsDelegate

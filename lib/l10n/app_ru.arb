@@ -4,6 +4,8 @@
   "mapTab": "Карта",
   "feedTab": "SOS Лента",
   "profileTab": "Профиль",
+  "catStatusLabel": "Состояние котика",
+  "catStatusNeedsFood": "Нужна пища или вода",
   "catStatusHealthy": "Здоров",
   "catStatusDangerDogs": "⚠️ Опасность (Собаки)",
   "catStatusLostPet": "🔍 Потеряшка",
@@ -21,5 +23,10 @@
   "enterPrompt": "Пожалуйста, введите число",
   "valueError": "Некоректный формат числа",
   "latRangeError": "Диапазон для широты: -90.0 до 90.0",
-  "longRangeError": "Диапазон для долготы: -180.0 до 180.0"
+  "longRangeError": "Диапазон для долготы: -180.0 до 180.0",
+  "genderLabel": "Пол котика:",
+  "genderMale": "Мальчик ♂️",
+  "genderFemale": "Девочка ♀️",
+  "genderUnknown": "❓"
+
 }

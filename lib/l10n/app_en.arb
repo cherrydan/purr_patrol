@@ -4,6 +4,8 @@
   "mapTab": "Map",
   "feedTab": "SOS Feed",
   "profileTab": "Profile",
+  "catStatusLabel": "Cat Status",
+  "catStatusNeedsFood": "Needs Food or Water",
   "catStatusHealthy": "Healthy",
   "catStatusDangerDogs": "⚠️ Danger (Dogs)",
   "catStatusLostPet": "🔍 Lost Pet",
@@ -25,6 +27,11 @@
   "enterPrompt": "Please, enter a value",
   "valueError": "Incorrect number format",
   "latRangeError": "Latitude range from -90.0 to 90.0",
-  "longRangeError": "Longitude range from -180.0 to 180.0"
+  "longRangeError": "Longitude range from -180.0 to 180.0",
+  "genderLabel": "Cat gender:",
+  "genderMale": "Male ♂️",
+  "genderFemale": "Female ♀️",
+  "genderUnknown": "❓"
+
 
 }

@@ -4,6 +4,8 @@
   "mapTab": "Mapa",
   "feedTab": "Feed SOS",
   "profileTab": "Perfil",
+  "catStatusLabel": "Estado de gatito",
+  "catStatusNeedsFood": "Necesita comida o agua",
   "catStatusHealthy": "Sano",
   "catStatusDangerDogs": "⚠️ Peligro (Perros)",
   "catStatusLostPet": "🔍 Mascota Perdida",
@@ -21,5 +23,10 @@
   "enterPrompt": "Por favor, introduzca un número",
   "valueError": "Formato de número no válido",
   "latRangeError": "Rango de latitud de -90.0 a 90.0",
-  "longRangeError": "Rango de longitud de -180.0 a 180.0"
+  "longRangeError": "Rango de longitud de -180.0 a 180.0",
+  "genderLabel": "El género del gatito",
+  "genderMale": "Macho ♂️",
+  "genderFemale": "Hembra ♀️",
+  "genderUnknown": "❓"
+
 }
