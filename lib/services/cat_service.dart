@@ -1,6 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/cat_marker.dart';
 import 'app_logger.dart';
+import 'dart:io';
+import 'dart:convert';
+import 'package:http/http.dart' as http; // Make sure to add this import!
+
+
 
 class CatService {
   // Название коллекции в Firestore
@@ -28,4 +33,37 @@ class CatService {
       }).toList();
     });
   }
+
+  // ... остальные импорты ...
+
+  Future<String?> uploadCatImage(File imageFile) async {
+  try {
+    final cloudName = 'jrw66nr0';
+    final uploadPreset = 'purr_patrol';
+    final url = Uri.parse('https://api.cloudinary.com/v1_1/$cloudName/image/upload');
+
+    final request = http.MultipartRequest('POST', url)
+      ..fields['upload_preset'] = uploadPreset
+      ..files.add(await http.MultipartFile.fromPath('file', imageFile.path));
+
+    final response = await request.send();
+
+    if (response.statusCode == 200) {
+      final responseData = await response.stream.bytesToString();
+      final jsonData = json.decode(responseData);
+      final imageUrl = jsonData['secure_url'];
+      logger.i("Photo uploaded to Cloudinary: $imageUrl");
+      return imageUrl;
+    } else {
+      logger.e("Failed to upload to Cloudinary. Status: ${response.statusCode}");
+      return null;
+    }
+  } catch (e) {
+    logger.e("Error uploading to Cloudinary: $e");
+    return null;
+  }
 }
+
+
+}
+

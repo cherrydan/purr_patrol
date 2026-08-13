@@ -1,9 +1,16 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:purr_patrol/models/cat_enums.dart';
 import 'package:purr_patrol/models/cat_marker.dart';
 import 'package:purr_patrol/services/cat_service.dart';
+import 'package:purr_patrol/widgets/image_picker_widget.dart';
 import '../l10n/app_localizations.dart';
+
+File? _selectedImage;
+   
+
 
 class AddCatScreen extends StatefulWidget {
   final double latitude;
@@ -61,6 +68,16 @@ class _AddCatScreenState extends State<AddCatScreen> {
           key: _formKey,
           child: ListView(
             children: [
+                 ImagePickerWidget(
+                  onImageSelected: (file) {
+                  setState(() {
+                   _selectedImage = file;
+                  });
+                 },
+               ),
+   const SizedBox(height: 16),
+   
+
               // Текстовое поле Названия
               TextFormField(
                 controller: _titleController,
@@ -306,11 +323,23 @@ class _AddCatScreenState extends State<AddCatScreen> {
               ElevatedButton(
                 child: Text(l10n.saveCatButton),
                 onPressed: () async {
-                 if (_formKey.currentState!.validate()) { 
+                if (!_formKey.currentState!.validate()) return; // Если форма не валидна, выходим 
+
+                // 2. Показываем индикатор загрузки (опционально, пока просто ждем)
+                   
+                String? imageUrl;
+                   
+                   // 3. 🟢 Если пользователь выбрал фото — сначала загружаем его в Storage!
+                if (_selectedImage != null) {
+                  imageUrl = await CatService().uploadCatImage(_selectedImage!);
+                }
+
+
                  CatMarker newCat = CatMarker(id: DateTime.now().millisecondsSinceEpoch.toString(), 
                  latitude: double.parse(_latitudeController.text.replaceAll(',', '.')), 
                  longitude: double.parse(_longitudeController.text.replaceAll(',', '.')), 
                  title: _titleController.text, description: _descriptionController.text, 
+                 imageUrl: imageUrl,
                  status: _selectedStatus, riskLevel: _selectedRiskLevel, 
                  gender: _selectedGender, isChipped: isChipped, isSterilized: isSterilized,
                  authorId: 'current_user', createdAt: DateTime.now()); // Собрали CatMarker
@@ -320,9 +349,8 @@ class _AddCatScreenState extends State<AddCatScreen> {
                  
                  if (!context.mounted) return;
                   Navigator.pop(context); 
-                 }
-          
-              })
+                }
+              )
             ],
           ),
         ),
