@@ -32,6 +32,9 @@
   "riskLabel": "Уровень риска",
   "riskSafe": "Безопасно 🟢",
   "riskDogsNearby": "Рядом собаки 🟡",
-  "riskUrgentDanger": "СРОЧНАЯ ОПАСНОСТЬ 🔴"
+  "riskUrgentDanger": "СРОЧНАЯ ОПАСНОСТЬ 🔴",
+  "cameraButton": "Камера",
+  "galleryButton": "Галерея"
+
 
 }

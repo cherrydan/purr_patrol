@@ -106,4 +106,10 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get riskUrgentDanger => 'СРОЧНАЯ ОПАСНОСТЬ 🔴';
+
+  @override
+  String get cameraButton => 'Камера';
+
+  @override
+  String get galleryButton => 'Галерея';
 }

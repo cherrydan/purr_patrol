@@ -297,6 +297,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'URGENT DANGER 🔴'**
   String get riskUrgentDanger;
+
+  /// No description provided for @cameraButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Camera'**
+  String get cameraButton;
+
+  /// No description provided for @galleryButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Gallery'**
+  String get galleryButton;
 }
 
 class _AppLocalizationsDelegate

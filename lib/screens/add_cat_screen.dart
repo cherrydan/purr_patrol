@@ -94,7 +94,7 @@ class _AddCatScreenState extends State<AddCatScreen> {
               // Текстовое поле Описания
               TextFormField(
                 controller: _descriptionController,
-                maxLines: 3,
+                maxLines: 2,
                 decoration: InputDecoration(
                   labelText: l10n.catDescriptionInput,
                   border: OutlineInputBorder(
@@ -350,7 +350,10 @@ class _AddCatScreenState extends State<AddCatScreen> {
                  if (!context.mounted) return;
                   Navigator.pop(context); 
                 }
-              )
+              ),
+              const SizedBox(height: 40), // 🟢 Спасительный отступ для скролла!
+   
+
             ],
           ),
         ),

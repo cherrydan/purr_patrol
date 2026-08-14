@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import '../l10n/app_localizations.dart';
 
 class ImagePickerWidget extends StatefulWidget {
   final Function(File?) onImageSelected; // 🟢 Передаем фото наверх
@@ -28,6 +29,9 @@ class _ImagePickerWidgetState extends State<ImagePickerWidget> {
 
   @override
   Widget build(BuildContext context) {
+    
+    final l10n = AppLocalizations.of(context)!;
+    
     return Column(
       children: [
         if (_imageFile != null)
@@ -50,12 +54,12 @@ class _ImagePickerWidgetState extends State<ImagePickerWidget> {
     ElevatedButton.icon(
       onPressed: () => _pickImage(ImageSource.camera),
       icon: const Icon(Icons.camera_alt_rounded),
-      label: const Text('Камера'), // потом вынесем в l10n
+      label: Text(l10n.cameraButton), 
     ),
     ElevatedButton.icon(
       onPressed: () => _pickImage(ImageSource.gallery),
       icon: const Icon(Icons.photo_library_rounded),
-      label: const Text('Галерея'), // потом вынесем в l10n
+      label: Text(l10n.galleryButton),
     ),
   ],
 )

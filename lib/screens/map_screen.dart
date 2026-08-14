@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:purr_patrol/l10n/app_localizations.dart';
 import 'package:purr_patrol/models/cat_enums.dart';
@@ -23,7 +24,40 @@ class _MapScreenState extends State<MapScreen> {
   // Стартовые координаты: Мадрид, Испания (Центр Южной Европы)
   final LatLng _initialCenter = const LatLng(40.416775, -3.703790);
   final CatService _catService = CatService();
-   
+  final _mapController = MapController();
+
+
+  Future<void> _getCurrentLocation() async {
+  bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
+  if (!serviceEnabled) {
+    // Службы геолокации выключены
+    return;
+  }
+
+  LocationPermission permission = await Geolocator.checkPermission();
+  if (permission == LocationPermission.denied) {
+    permission = await Geolocator.requestPermission();
+    if (permission == LocationPermission.denied) {
+      // Разрешение отклонено
+      return;
+    }
+  }
+  
+  if (permission == LocationPermission.deniedForever) {
+    // Разрешение заблокировано навсегда
+    return;
+  }
+
+        // Если всё отлично, получаем позицию:
+        Position position = await Geolocator.getCurrentPosition(
+        locationSettings: const LocationSettings(
+          accuracy: LocationAccuracy.high, // Твоя высокая точность
+          distanceFilter: 10,             // (Опционально) обновление каждые 10 метров
+        ),
+      ); 
+      _mapController.move(LatLng(position.latitude, position.longitude), 14.0);
+  }
+
 
   void _showCatDetailsSheet(CatMarker cat) {
     // 🟢 Получаем l10n прямо здесь, так как контекст доступен внутри builder!
@@ -205,9 +239,10 @@ class _MapScreenState extends State<MapScreen> {
   Widget build(BuildContext context) {
 
     final l10n = AppLocalizations.of(context)!;
-
+   
     return Scaffold(
       body: FlutterMap(
+        mapController: _mapController,
         options: MapOptions(
           initialCenter: _initialCenter,
           initialZoom: 14.0,
@@ -274,27 +309,44 @@ class _MapScreenState extends State<MapScreen> {
         ],
       ),
 
-      // 🟢 НАША КНОПКА ДОБАВЛЕНИЯ:
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          logger.i("Нажата кнопка добавления нового котика");
-          // На следующем микро-шаге здесь откроем форму создания!
-          Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => AddCatScreen(
-            latitude: _initialCenter.latitude,
-            longitude: _initialCenter.longitude,
-         ),
-       ),
-     );
-        },
-        backgroundColor: const Color(0xFF2ECC71), // Наш эко-зеленый
-        foregroundColor: Colors.white,
-        icon: const Icon(Icons.add_location_alt_rounded),
-        label: Text(l10n.addCatMarker),
+            // 🟢 Две кнопки в правом нижнем углу:
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          // 1. Кнопка геолокации (GPS)
+          FloatingActionButton(
+            heroTag: 'btnLocation', // Уникальный тег, чтобы Flutter не ругался на две кнопки
+            onPressed: _getCurrentLocation, // 🟢 Вызываем твой метод!
+            backgroundColor: Colors.white,
+            foregroundColor: Colors.black87,
+            child: const Icon(Icons.my_location_rounded),
+          ),
+          const SizedBox(height: 12),
+          
+          // 2. Твоя кнопка добавления котика
+          FloatingActionButton.extended(
+            heroTag: 'btnAddCat',
+            onPressed: () {
+              logger.i("Нажата кнопка добавления нового котика");
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AddCatScreen(
+                    latitude: _initialCenter.latitude,
+                    longitude: _initialCenter.longitude,
+                  ),
+                ),
+              );
+            },
+            backgroundColor: const Color(0xFF2ECC71),
+            foregroundColor: Colors.white,
+            icon: const Icon(Icons.add_location_alt_rounded),
+            label: Text(l10n.addCatMarker),
+          ),
+        ],
       ),
-    
+
     );
   }
 }

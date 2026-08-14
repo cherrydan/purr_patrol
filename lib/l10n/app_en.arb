@@ -36,7 +36,10 @@
   "riskLabel": "Risk level",
   "riskSafe": "Safe 🟢",
   "riskDogsNearby": "Dogs nearby 🟡",
-  "riskUrgentDanger": "URGENT DANGER 🔴"
+  "riskUrgentDanger": "URGENT DANGER 🔴",
+  "cameraButton": "Camera",
+  "galleryButton": "Gallery"
+
 
 
 }

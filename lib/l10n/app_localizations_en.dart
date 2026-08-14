@@ -106,4 +106,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get riskUrgentDanger => 'URGENT DANGER 🔴';
+
+  @override
+  String get cameraButton => 'Camera';
+
+  @override
+  String get galleryButton => 'Gallery';
 }
