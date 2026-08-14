@@ -333,8 +333,8 @@ class _MapScreenState extends State<MapScreen> {
                 context,
                 MaterialPageRoute(
                   builder: (context) => AddCatScreen(
-                    latitude: _initialCenter.latitude,
-                    longitude: _initialCenter.longitude,
+                    latitude: _mapController.camera.center.latitude,
+                    longitude: _mapController.camera.center.longitude,
                   ),
                 ),
               );
