@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:purr_patrol/models/cat_enums.dart';
 import 'package:purr_patrol/models/cat_marker.dart';
 import 'package:purr_patrol/services/cat_service.dart';
@@ -30,8 +29,10 @@ class _AddCatScreenState extends State<AddCatScreen> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _descriptionController = TextEditingController();
-  final TextEditingController _latitudeController = TextEditingController();
-  final TextEditingController _longitudeController = TextEditingController();
+  late final TextEditingController _latitudeController;
+  late final TextEditingController _longitudeController;
+   
+
   bool isChipped = false;
   bool isSterilized = false;
 
@@ -40,7 +41,14 @@ class _AddCatScreenState extends State<AddCatScreen> {
   RiskLevel _selectedRiskLevel = RiskLevel.safe; // По умолчанию 'Безопасно'
    
 
-   
+  @override 
+  void initState() { 
+    
+    super.initState();
+  
+    _latitudeController = TextEditingController(text: widget.latitude.toString());
+    _longitudeController = TextEditingController(text: widget.longitude.toString());
+  }
 
 
   @override
@@ -108,6 +116,7 @@ class _AddCatScreenState extends State<AddCatScreen> {
               // Текстовое поле Широта
               TextFormField(controller: _latitudeController,
               maxLines: 1,
+              readOnly: true,
               decoration: InputDecoration(
                   labelText: l10n.catLatCoord,
                   border: OutlineInputBorder(
@@ -115,37 +124,11 @@ class _AddCatScreenState extends State<AddCatScreen> {
                   ),
                   prefixIcon: const Icon(Icons.language_rounded),
                 ),
-              keyboardType: const TextInputType.numberWithOptions(decimal: true), 
-              inputFormatters: [
-                FilteringTextInputFormatter.allow(RegExp(r'^\d*[.,]?\d*')),
-                ],
-
-                // Валидация 
-                validator: (value) {
-                if (value == null || value.isEmpty) {
-                 return l10n.enterPrompt;
-                }
-    
-                // Заменяем запятую на точку для корректного парсинга в Dart
-                final normalizedValue = value.replaceAll(',', '.');
-                final parsedValue = double.tryParse(normalizedValue);
-    
-                if (parsedValue == null) {
-                return l10n.valueError;
-                }
-
-                 // Проверка диапазона широты
-                if (parsedValue < -90.0 || parsedValue > 90.0) {
-
-                  return l10n.latRangeError;
-                }
-
-                return null; // Ошибок нет
-                }, // Конец валидации              
+                            
               
               ),
               // Текстовое поле Долгота
-              TextFormField(controller: _longitudeController,
+              TextFormField(controller: _longitudeController, readOnly: true,
               maxLines: 1, decoration: InputDecoration(
                   labelText: l10n.catLongCoord,
                   border: OutlineInputBorder(
@@ -153,29 +136,7 @@ class _AddCatScreenState extends State<AddCatScreen> {
                   ),
                   prefixIcon: const Icon(Icons.language_rounded),
                 ),
-                keyboardType: const TextInputType.numberWithOptions(decimal: true),
-                inputFormatters: [
-                  FilteringTextInputFormatter.allow(RegExp(r'^-?\d*[.,]?\d*')),
-                ],
-                 // Валидация 
-                validator: (value) {
-                if (value == null || value.isEmpty) {
-                 return l10n.enterPrompt;
-                }
-    
-                // Заменяем запятую на точку для корректного парсинга в Dart
-                final normalizedValue = value.replaceAll(',', '.');
-                final parsedValue = double.tryParse(normalizedValue);
-    
-                if (parsedValue == null) {
-                return l10n.valueError;
-                }
-
-                 if (parsedValue < -180.0 || parsedValue > 180.0) {
-                  return l10n.longRangeError;
-                }
-                return null; // Ошибок нет
-                }, // Конец валидации   
+                 
               ),
 
               Text(l10n.genderLabel, style: const TextStyle(fontWeight: FontWeight.bold),),

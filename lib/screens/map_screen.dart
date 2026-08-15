@@ -238,7 +238,7 @@ class _MapScreenState extends State<MapScreen> {
   @override
   Widget build(BuildContext context) {
 
-    final l10n = AppLocalizations.of(context)!;
+    // final l10n = AppLocalizations.of(context)!;
    
     return Scaffold(
       body: FlutterMap(
@@ -246,6 +246,20 @@ class _MapScreenState extends State<MapScreen> {
         options: MapOptions(
           initialCenter: _initialCenter,
           initialZoom: 14.0,
+          onTap: (tapPosition, point) {
+          logger.i("Кликнули по карте в точку: ${point.latitude}, ${point.longitude}");
+          Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AddCatScreen(
+                    latitude: point.latitude,
+                    longitude: point.longitude,
+                  ),
+                ),
+              );
+          // На следующем шаге откроем форму с ЭТИМИ координатами!
+},
+
         ),
         children: [
           // 1. Слой улиц
@@ -322,28 +336,7 @@ class _MapScreenState extends State<MapScreen> {
             foregroundColor: Colors.black87,
             child: const Icon(Icons.my_location_rounded),
           ),
-          const SizedBox(height: 12),
           
-          // 2. Твоя кнопка добавления котика
-          FloatingActionButton.extended(
-            heroTag: 'btnAddCat',
-            onPressed: () {
-              logger.i("Нажата кнопка добавления нового котика");
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => AddCatScreen(
-                    latitude: _mapController.camera.center.latitude,
-                    longitude: _mapController.camera.center.longitude,
-                  ),
-                ),
-              );
-            },
-            backgroundColor: const Color(0xFF2ECC71),
-            foregroundColor: Colors.white,
-            icon: const Icon(Icons.add_location_alt_rounded),
-            label: Text(l10n.addCatMarker),
-          ),
         ],
       ),
 
