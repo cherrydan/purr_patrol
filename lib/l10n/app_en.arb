@@ -38,7 +38,8 @@
   "riskDogsNearby": "Dogs nearby 🟡",
   "riskUrgentDanger": "URGENT DANGER 🔴",
   "cameraButton": "Camera",
-  "galleryButton": "Gallery"
+  "galleryButton": "Gallery",
+  "addedOn": "Added on:"
 
 
 

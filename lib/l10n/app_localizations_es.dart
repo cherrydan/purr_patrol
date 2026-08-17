@@ -112,4 +112,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get galleryButton => 'Galería';
+
+  @override
+  String get addedOn => 'Añadido:';
 }

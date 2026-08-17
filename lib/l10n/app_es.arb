@@ -34,7 +34,8 @@
   "riskDogsNearby": "Hay perros cerca 🟡",
   "riskUrgentDanger": "PELIGRO URGENTE 🔴",
   "cameraButton": "Cámara",
-  "galleryButton": "Galería"
+  "galleryButton": "Galería",
+  "addedOn": "Añadido:"
 
 
 }

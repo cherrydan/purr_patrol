@@ -112,4 +112,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get galleryButton => 'Галерея';
+
+  @override
+  String get addedOn => 'Добавлено: ';
 }

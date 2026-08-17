@@ -14,11 +14,15 @@ File? _selectedImage;
 class AddCatScreen extends StatefulWidget {
   final double latitude;
   final double longitude;
+  final CatMarker? catToEdit; // 🟢 Если null — создаем нового, если не null — редактируем!
+   
+
 
   const AddCatScreen({
     super.key,
     required this.latitude,
     required this.longitude,
+    this.catToEdit,
   });
 
   @override
@@ -27,8 +31,8 @@ class AddCatScreen extends StatefulWidget {
 
 class _AddCatScreenState extends State<AddCatScreen> {
   final _formKey = GlobalKey<FormState>();
-  final TextEditingController _titleController = TextEditingController();
-  final TextEditingController _descriptionController = TextEditingController();
+  TextEditingController _titleController = TextEditingController();
+  TextEditingController _descriptionController = TextEditingController();
   late final TextEditingController _latitudeController;
   late final TextEditingController _longitudeController;
    
@@ -48,6 +52,22 @@ class _AddCatScreenState extends State<AddCatScreen> {
   
     _latitudeController = TextEditingController(text: widget.latitude.toString());
     _longitudeController = TextEditingController(text: widget.longitude.toString());
+    _titleController = TextEditingController(
+     text: widget.catToEdit?.title ?? '',
+   );
+   _descriptionController = TextEditingController(
+     text: widget.catToEdit?.description ?? '',
+   );
+    if (widget.catToEdit != null) {
+     isChipped = widget.catToEdit!.isChipped;
+     isSterilized = widget.catToEdit!.isSterilized;
+     _selectedGender = widget.catToEdit!.gender;
+     _selectedStatus = widget.catToEdit!.status;
+     _selectedRiskLevel = widget.catToEdit!.riskLevel;
+   }
+   
+
+
   }
 
 
@@ -284,19 +304,24 @@ class _AddCatScreenState extends State<AddCatScreen> {
               ElevatedButton(
                 child: Text(l10n.saveCatButton),
                 onPressed: () async {
+                  final String catId = widget.catToEdit?.id ?? DateTime.now().millisecondsSinceEpoch.toString();
+    
+  
                 if (!_formKey.currentState!.validate()) return; // Если форма не валидна, выходим 
 
                 // 2. Показываем индикатор загрузки (опционально, пока просто ждем)
                    
-                String? imageUrl;
-                   
-                   // 3. 🟢 Если пользователь выбрал фото — сначала загружаем его в Storage!
+               // 🟢 Инициализируем старой ссылкой (если редактируем)
+              String? imageUrl = widget.catToEdit?.imageUrl;
+
+                // Если выбрали новую — загружаем её и перезаписываем ссылку
                 if (_selectedImage != null) {
                   imageUrl = await CatService().uploadCatImage(_selectedImage!);
                 }
 
 
-                 CatMarker newCat = CatMarker(id: DateTime.now().millisecondsSinceEpoch.toString(), 
+
+                 CatMarker newCat = CatMarker(id: catId, 
                  latitude: double.parse(_latitudeController.text.replaceAll(',', '.')), 
                  longitude: double.parse(_longitudeController.text.replaceAll(',', '.')), 
                  title: _titleController.text, description: _descriptionController.text, 

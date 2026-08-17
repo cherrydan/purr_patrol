@@ -34,7 +34,8 @@
   "riskDogsNearby": "Рядом собаки 🟡",
   "riskUrgentDanger": "СРОЧНАЯ ОПАСНОСТЬ 🔴",
   "cameraButton": "Камера",
-  "galleryButton": "Галерея"
+  "galleryButton": "Галерея",
+  "addedOn": "Добавлено: "
 
 
 }

@@ -309,6 +309,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Gallery'**
   String get galleryButton;
+
+  /// No description provided for @addedOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Added on:'**
+  String get addedOn;
 }
 
 class _AppLocalizationsDelegate

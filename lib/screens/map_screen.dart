@@ -141,20 +141,26 @@ class _MapScreenState extends State<MapScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
-                    child: Text(
+                    child: Row(children: [Text(
                       cat.title,
                       style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+                    const SizedBox(width: 8), 
+                    cat.gender == CatGender.male ? const Icon(Icons.male_rounded, color: Colors.blue):
+                    cat.gender == CatGender.female ? const Icon(Icons.female_rounded, color: Colors.pink) :
+                    const Icon(Icons.help_outline_rounded, color: Colors.grey)
+                    ],) 
+                    
                   ),
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                     decoration: BoxDecoration(
                       color: statusColor.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: statusColor),
+                      
                     ),
                     child: Text(
                       statusText,
@@ -198,7 +204,10 @@ class _MapScreenState extends State<MapScreen> {
                   ],
                 ),
 
-              const SizedBox(height: 20), 
+              const SizedBox(height: 12), 
+              Text("${l10n.addedOn} ${cat.createdAt.day}.${cat.createdAt.month}.${cat.createdAt.year} ${cat.createdAt.hour}:${cat.createdAt.minute.toString().padLeft(2, '0')}", 
+              style: const TextStyle(fontSize: 12, color: Colors.grey),),
+
 
 
               // Описание
@@ -295,6 +304,20 @@ class _MapScreenState extends State<MapScreen> {
                         logger.i("Кликнули на кота: ${cat.title}");
                         _showCatDetailsSheet(cat);
                       },
+                      onDoubleTap: () {
+                      logger.i("Двойной клик для редактирования: ${cat.title}");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => AddCatScreen(
+                            latitude: cat.latitude,
+                            longitude: cat.longitude,
+                            catToEdit: cat, // 🟢 Самое главное: передаем нашу метку!
+                          ),
+                        ),
+                      );
+                    },
+
                       child: Container(
                         decoration: BoxDecoration(
                           color: markerColor,
