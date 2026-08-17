@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:geolocator/geolocator.dart';
@@ -113,13 +114,12 @@ class _MapScreenState extends State<MapScreen> {
                 child: cat.imageUrl != null && cat.imageUrl!.isNotEmpty
                     ? ClipRRect(
                         borderRadius: BorderRadius.circular(16),
-                        child: Image.network(
-                          cat.imageUrl!,
-                          fit: BoxFit.cover,
-                          errorBuilder: (context, error, stackTrace) => Center(
-                            child: Icon(Icons.pets_rounded, size: 64, color: Colors.green.withValues(alpha: 0.5)),
-                          ),
-                        ),
+                        child: CachedNetworkImage(
+                        imageUrl: cat.imageUrl!,
+                        fit: BoxFit.cover,
+                        placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+                        errorWidget: (context, url, error) => const Icon(Icons.error),
+                      )
                       )
                     : Center( // 🟢 Локализовано
                         child: Column(
