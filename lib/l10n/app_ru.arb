@@ -35,7 +35,8 @@
   "riskUrgentDanger": "СРОЧНАЯ ОПАСНОСТЬ 🔴",
   "cameraButton": "Камера",
   "galleryButton": "Галерея",
-  "addedOn": "Добавлено: "
+  "addedOn": "Добавлено: ",
+  "filterAll": "Все🐾"
 
 
 }

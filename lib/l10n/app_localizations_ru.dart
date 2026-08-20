@@ -115,4 +115,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get addedOn => 'Добавлено: ';
+
+  @override
+  String get filterAll => 'Все🐾';
 }

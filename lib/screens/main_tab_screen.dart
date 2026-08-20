@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import '../l10n/app_localizations.dart';
 import 'map_screen.dart';
+import 'feed_screen.dart';
+   
+
    
    
 
@@ -18,7 +21,7 @@ class _MainTabScreenState extends State<MainTabScreen> {
   
   final List<Widget> _screens = const [
        MapScreen(),
-       Center(child: Text('Feed')),
+       FeedScreen(),
        Center(child: Text('Profile')),
      ];
      

@@ -315,6 +315,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Added on:'**
   String get addedOn;
+
+  /// No description provided for @filterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All🐾'**
+  String get filterAll;
 }
 
 class _AppLocalizationsDelegate

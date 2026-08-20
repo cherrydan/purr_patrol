@@ -379,8 +379,9 @@ class _MapScreenState extends State<MapScreen> {
                 child: Row(
                   children: [
                     // Чип "Все"
+                   
                     ChoiceChip(
-                      label: const Text('Все 🐾'),
+                      label: Text(l10n.filterAll),
                       selected: _selectedFilterStatus == null,
                       onSelected: (selected) {
                         if (selected) {

@@ -115,4 +115,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get addedOn => 'Added on:';
+
+  @override
+  String get filterAll => 'All🐾';
 }
