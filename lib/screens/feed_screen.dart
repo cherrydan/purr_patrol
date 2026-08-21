@@ -8,13 +8,15 @@ import 'package:cached_network_image/cached_network_image.dart';
 
 
 class FeedScreen extends StatelessWidget {
-
+  final Function(CatMarker)? onCatSelected;
   
 
-  const FeedScreen({super.key});
+  const FeedScreen({
+    this.onCatSelected,
+    super.key});
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+    
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(appBar: AppBar(title: Text(l10n.feedTab)),
     body: StreamBuilder<List<CatMarker>>(
@@ -73,6 +75,9 @@ class FeedScreen extends StatelessWidget {
                   ),
                      onTap: () {
                       logger.i("Кликнули на кота в ленте: ${cat.title}");
+                      if (onCatSelected != null) {
+                        onCatSelected!(cat);
+                      }
                     },
    
 

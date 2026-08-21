@@ -12,7 +12,9 @@ import '../l10n/app_localizations.dart';
 import 'add_cat_screen.dart';
 
 class MapScreen extends StatefulWidget {
-  const MapScreen({super.key});
+  final CatMarker? targetCat;
+  
+  const MapScreen({super.key, this.targetCat});
 
   @override
   State<MapScreen> createState() => _MapScreenState();
@@ -25,7 +27,39 @@ class _MapScreenState extends State<MapScreen> {
   final MapController _mapController = MapController();
 
   // 🟢 Переменная текущего фильтра (null = "Все")
-  CatStatus? _selectedFilterStatus = CatStatus.injured;
+  CatStatus? _selectedFilterStatus;
+
+   @override
+  void initState() {
+    super.initState();
+    // 🟢 Если при старте экрана передали целевого котика — подлетаем и открываем карточку!
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (widget.targetCat != null) {
+        _mapController.move(
+          LatLng(widget.targetCat!.latitude, widget.targetCat!.longitude),
+          15.0,
+        );
+        _showCatDetailsSheet(widget.targetCat!); // 🟢 ОТКРЫВАЕМ КАРТОЧКУ!
+      }
+    });
+  }
+
+  @override
+  void didUpdateWidget(covariant MapScreen oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    // 🟢 Если экран уже был открыт и котик обновился
+    if (widget.targetCat != null && widget.targetCat != oldWidget.targetCat) {
+      _mapController.move(
+        LatLng(widget.targetCat!.latitude, widget.targetCat!.longitude),
+        15.0,
+      );
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        _showCatDetailsSheet(widget.targetCat!); // 🟢 ОТКРЫВАЕМ КАРТОЧКУ!
+      });
+    }
+  }
+
+
 
   // 🟢 Получение текущей геолокации (GPS)
   Future<void> _getCurrentLocation() async {

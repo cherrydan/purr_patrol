@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:purr_patrol/models/cat_marker.dart';
 import '../l10n/app_localizations.dart';
 import 'map_screen.dart';
 import 'feed_screen.dart';
@@ -18,13 +19,9 @@ class MainTabScreen extends StatefulWidget {
 class _MainTabScreenState extends State<MainTabScreen> {
   
   int _currentIndex = 0;
-  
-  final List<Widget> _screens = const [
-       MapScreen(),
-       FeedScreen(),
-       Center(child: Text('Profile')),
-     ];
-     
+  CatMarker? _targetCatForMap; // 🟢 Котик, к которому нужно подлететь на карте
+   
+
 
      
 
@@ -33,10 +30,22 @@ class _MainTabScreenState extends State<MainTabScreen> {
   Widget build(BuildContext context) {
   
   final l10n = AppLocalizations.of(context)!;
-   
+
+  final List<Widget> screens = [
+      MapScreen(targetCat: _targetCatForMap), // Передаем котика в MapScreen
+      FeedScreen(
+        onCatSelected: (cat) {
+          setState(() {
+            _currentIndex = 0;      // Switch to Map tab
+            _targetCatForMap = cat; // Remember the target cat
+          });
+        },
+      ),
+      const Center(child: Text('Profile')),
+    ]; 
 
 
-    return Scaffold(body: _screens[_currentIndex], bottomNavigationBar: BottomNavigationBar(
+  return Scaffold(body: screens[_currentIndex], bottomNavigationBar: BottomNavigationBar(
   currentIndex: _currentIndex,
   onTap: (index) {
     setState(() {
