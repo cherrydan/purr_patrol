@@ -35,6 +35,15 @@ class FeedScreen extends StatelessWidget {
               itemCount: cats.length,
               itemBuilder: (context, index) {
                 final cat = cats[index];
+                String statusText = l10n.catStatusHealthy;
+                if (cat.status == CatStatus.needsFood) {
+                  statusText = l10n.catStatusNeedsFood;
+                } else if (cat.status == CatStatus.injured) {
+                  statusText = l10n.catStatusInjured;
+                } else if (cat.status == CatStatus.lostPet) {
+                  statusText = l10n.catStatusLostPet;
+                }
+   
                 return Card( 
                   margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6), // 🟢 Отступы вокруг каждой карточки!
                   elevation: 2, // 🟢 Легкая объемная тень
@@ -50,7 +59,7 @@ class FeedScreen extends StatelessWidget {
                     CachedNetworkImageProvider(cat.imageUrl!) : null,
                     child:Icon(Icons.pets_rounded, color: Colors.green)
                   ),
-                     trailing: Container(
+                    trailing: Container(
                     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
                       color: (cat.status == CatStatus.healthy
@@ -61,7 +70,7 @@ class FeedScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
-                      cat.status.name, // Позже подставим l10n!
+                      statusText,
                       style: TextStyle(
                         color: cat.status == CatStatus.healthy
                             ? Colors.green
@@ -73,6 +82,7 @@ class FeedScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+
                      onTap: () {
                       logger.i("Кликнули на кота в ленте: ${cat.title}");
                       if (onCatSelected != null) {
