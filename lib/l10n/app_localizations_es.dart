@@ -118,4 +118,14 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get filterAll => 'Todo🐾';
+
+  @override
+  String get termsTitle => 'Reglas de la comunidad PurrPatrol 🐾';
+
+  @override
+  String get termsBody =>
+      'Al usar esta aplicación, te comprometes a utilizar los datos de ubicación de los gatos exclusivamente para su protección, alimentación, atención médica y adopción. Queda estrictamente prohibido cualquier uso de los datos para dañar a los animales o el uso de datos de ubicación con OTROS fines.';
+
+  @override
+  String get termsAcceptButton => 'Me comprometo a proteger a los gatos';
 }

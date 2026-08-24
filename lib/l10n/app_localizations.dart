@@ -321,6 +321,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'All🐾'**
   String get filterAll;
+
+  /// No description provided for @termsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'PurrPatrol Community Rules 🐾'**
+  String get termsTitle;
+
+  /// No description provided for @termsBody.
+  ///
+  /// In en, this message translates to:
+  /// **'By using this application, you agree to use cat location data exclusively for their protection, feeding, medical care, and rehoming. Any use of this data to harm animals or using location data for OTHER purposes is strictly prohibited and subject to legal action.'**
+  String get termsBody;
+
+  /// No description provided for @termsAcceptButton.
+  ///
+  /// In en, this message translates to:
+  /// **'I pledge to protect cats'**
+  String get termsAcceptButton;
 }
 
 class _AppLocalizationsDelegate

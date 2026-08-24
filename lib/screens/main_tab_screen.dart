@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:purr_patrol/models/cat_marker.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../l10n/app_localizations.dart';
 import 'map_screen.dart';
 import 'feed_screen.dart';
@@ -20,10 +21,55 @@ class _MainTabScreenState extends State<MainTabScreen> {
   
   int _currentIndex = 0;
   CatMarker? _targetCatForMap; // 🟢 Котик, к которому нужно подлететь на карте
+
+
+  @override
+   void initState() {
+     super.initState();
+     _checkTermsConsent();
+   }
    
 
+   
 
+Future<void> _checkTermsConsent() async {
+  final prefs = await SharedPreferences.getInstance();
+  
+  bool accepted = prefs.getBool('terms_accepted') ?? false;
+
+  if (!accepted && mounted) {
+    _showsTermsDialog(prefs);
+  }
+}
      
+void _showsTermsDialog(SharedPreferences prefs) {
+
+  final l10n = AppLocalizations.of(context)!;
+
+  showDialog(context: context, 
+  barrierDismissible: false,
+  builder: (context) => AlertDialog(
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+    title: Text(l10n.termsTitle), 
+    content: Text(l10n.termsBody),
+    actions: [
+      ElevatedButton(onPressed: () async {
+        await prefs.setBool('terms_accepted', true);
+        if (!context.mounted) return;
+        Navigator.pop(context);
+      }, 
+      style: ElevatedButton.styleFrom(
+        backgroundColor: const Color(0xFF2ECC71),
+               foregroundColor: Colors.white,
+             ),
+      
+      
+      child: Text(l10n.termsAcceptButton),
+      ),
+    ],
+  ),
+  );
+  }
 
 
   @override
@@ -70,3 +116,4 @@ class _MainTabScreenState extends State<MainTabScreen> {
 );
 }
 }
+ 

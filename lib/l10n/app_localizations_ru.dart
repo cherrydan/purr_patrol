@@ -118,4 +118,14 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get filterAll => 'Все🐾';
+
+  @override
+  String get termsTitle => 'Правила сообщества PurrPatrol 🐾';
+
+  @override
+  String get termsBody =>
+      'By using this application, you agree to use cat location data exclusively for their protection, feeding, medical care, and rehoming. Any use of this data to harm animals or using location data for OTHER purposes is strictly prohibited and subject to legal action.';
+
+  @override
+  String get termsAcceptButton => 'Я обязуюсь защищать котиков';
 }
