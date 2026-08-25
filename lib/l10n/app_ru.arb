@@ -38,9 +38,14 @@
   "addedOn": "Добавлено: ",
   "filterAll": "Все🐾",
   "termsTitle": "Правила сообщества PurrPatrol 🐾",
-  "termsBody": "By using this application, you agree to use cat location data exclusively for their protection, feeding, medical care, and rehoming. Any use of this data to harm animals or using location data for OTHER purposes is strictly prohibited and subject to legal action.",
-  "termsAcceptButton": "Я обязуюсь защищать котиков"
-
+  "termsBody": "Используя приложение, вы обязуетесь использовать геоданные котиков исключительно для их защиты, кормления, лечения и поиска хозяев. Любое использование данных во вред животным или использование геоданных с ДРУГИМИ целями строго запрещено и преследуется по закону.",
+  "termsAcceptButton": "Я обязуюсь защищать котиков",
+  "volunteerPage": "Профиль волонтёра",
+  "volunteerTitle": "Волонтер PurrPatrol",
+  "activeRescuerBadge": "Активный спасатель котиков 🛡️",
+  "communityRulesButton": "Правила сообщества 📜",
+  "appVersionInfo": "Версия приложения 1.0.0 🐾",
+  "appTagline": "PurrPatrol — Сеть спасения котиков"
 
 
 }

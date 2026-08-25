@@ -43,5 +43,14 @@
   "filterAll": "All🐾",
   "termsTitle": "PurrPatrol Community Rules 🐾",
   "termsBody": "By using this application, you agree to use cat location data exclusively for their protection, feeding, medical care, and rehoming. Any use of this data to harm animals or using location data for OTHER purposes is strictly prohibited and subject to legal action.",
-  "termsAcceptButton": "I pledge to protect cats"
+  "termsAcceptButton": "I pledge to protect cats",
+  "volunteerPage": "Volunteer's Profile",
+  "volunteerTitle": "PurrPatrol Volunteer",
+  "activeRescuerBadge": "Active Cat Rescuer 🛡️",
+  "communityRulesButton": "Community Rules 📜",
+  "appVersionInfo": "App Version 1.0.0 🐾",
+  "appTagline": "PurrPatrol — Emergency Cat Network"
+
+
+  
 }

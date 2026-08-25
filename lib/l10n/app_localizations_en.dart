@@ -128,4 +128,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get termsAcceptButton => 'I pledge to protect cats';
+
+  @override
+  String get volunteerPage => 'Volunteer\'s Profile';
+
+  @override
+  String get volunteerTitle => 'PurrPatrol Volunteer';
+
+  @override
+  String get activeRescuerBadge => 'Active Cat Rescuer 🛡️';
+
+  @override
+  String get communityRulesButton => 'Community Rules 📜';
+
+  @override
+  String get appVersionInfo => 'App Version 1.0.0 🐾';
+
+  @override
+  String get appTagline => 'PurrPatrol — Emergency Cat Network';
 }

@@ -39,7 +39,14 @@
   "filterAll": "Todo🐾",
   "termsTitle": "Reglas de la comunidad PurrPatrol 🐾",
   "termsBody": "Al usar esta aplicación, te comprometes a utilizar los datos de ubicación de los gatos exclusivamente para su protección, alimentación, atención médica y adopción. Queda estrictamente prohibido cualquier uso de los datos para dañar a los animales o el uso de datos de ubicación con OTROS fines.",
-  "termsAcceptButton": "Me comprometo a proteger a los gatos"
+  "termsAcceptButton": "Me comprometo a proteger a los gatos",
+  "volunteerPage": "Perfil de voluntario",
+  "volunteerTitle": "Voluntario de PurrPatrol",
+  "activeRescuerBadge": "Rescatador de gatos activo 🛡️",
+  "communityRulesButton": "Reglas de la comunidad 📜",
+  "appVersionInfo": "Versión de la app 1.0.0 🐾",
+  "appTagline": "PurrPatrol — Red de emergencia para gatos"
+
 
 
 

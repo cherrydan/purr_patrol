@@ -124,8 +124,26 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get termsBody =>
-      'By using this application, you agree to use cat location data exclusively for their protection, feeding, medical care, and rehoming. Any use of this data to harm animals or using location data for OTHER purposes is strictly prohibited and subject to legal action.';
+      'Используя приложение, вы обязуетесь использовать геоданные котиков исключительно для их защиты, кормления, лечения и поиска хозяев. Любое использование данных во вред животным или использование геоданных с ДРУГИМИ целями строго запрещено и преследуется по закону.';
 
   @override
   String get termsAcceptButton => 'Я обязуюсь защищать котиков';
+
+  @override
+  String get volunteerPage => 'Профиль волонтёра';
+
+  @override
+  String get volunteerTitle => 'Волонтер PurrPatrol';
+
+  @override
+  String get activeRescuerBadge => 'Активный спасатель котиков 🛡️';
+
+  @override
+  String get communityRulesButton => 'Правила сообщества 📜';
+
+  @override
+  String get appVersionInfo => 'Версия приложения 1.0.0 🐾';
+
+  @override
+  String get appTagline => 'PurrPatrol — Сеть спасения котиков';
 }

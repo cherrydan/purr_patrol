@@ -339,6 +339,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'I pledge to protect cats'**
   String get termsAcceptButton;
+
+  /// No description provided for @volunteerPage.
+  ///
+  /// In en, this message translates to:
+  /// **'Volunteer\'s Profile'**
+  String get volunteerPage;
+
+  /// No description provided for @volunteerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'PurrPatrol Volunteer'**
+  String get volunteerTitle;
+
+  /// No description provided for @activeRescuerBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Active Cat Rescuer 🛡️'**
+  String get activeRescuerBadge;
+
+  /// No description provided for @communityRulesButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Community Rules 📜'**
+  String get communityRulesButton;
+
+  /// No description provided for @appVersionInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'App Version 1.0.0 🐾'**
+  String get appVersionInfo;
+
+  /// No description provided for @appTagline.
+  ///
+  /// In en, this message translates to:
+  /// **'PurrPatrol — Emergency Cat Network'**
+  String get appTagline;
 }
 
 class _AppLocalizationsDelegate

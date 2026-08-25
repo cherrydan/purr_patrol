@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:purr_patrol/models/cat_marker.dart';
+import 'package:purr_patrol/screens/profile_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../l10n/app_localizations.dart';
 import 'map_screen.dart';
 import 'feed_screen.dart';
+import '../widgets/terms_dialog.dart';
    
 
    
@@ -38,39 +40,10 @@ Future<void> _checkTermsConsent() async {
   bool accepted = prefs.getBool('terms_accepted') ?? false;
 
   if (!accepted && mounted) {
-    _showsTermsDialog(prefs);
+    showTermsDialog(context, isFirstLaunch: true, prefs: prefs);
   }
 }
      
-void _showsTermsDialog(SharedPreferences prefs) {
-
-  final l10n = AppLocalizations.of(context)!;
-
-  showDialog(context: context, 
-  barrierDismissible: false,
-  builder: (context) => AlertDialog(
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-    title: Text(l10n.termsTitle), 
-    content: Text(l10n.termsBody),
-    actions: [
-      ElevatedButton(onPressed: () async {
-        await prefs.setBool('terms_accepted', true);
-        if (!context.mounted) return;
-        Navigator.pop(context);
-      }, 
-      style: ElevatedButton.styleFrom(
-        backgroundColor: const Color(0xFF2ECC71),
-               foregroundColor: Colors.white,
-             ),
-      
-      
-      child: Text(l10n.termsAcceptButton),
-      ),
-    ],
-  ),
-  );
-  }
-
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +60,7 @@ void _showsTermsDialog(SharedPreferences prefs) {
           });
         },
       ),
-      const Center(child: Text('Profile')),
+      const ProfileScreen(),
     ]; 
 
 
