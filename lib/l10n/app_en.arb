@@ -49,8 +49,8 @@
   "activeRescuerBadge": "Active Cat Rescuer 🛡️",
   "communityRulesButton": "Community Rules 📜",
   "appVersionInfo": "App Version 1.0.0 🐾",
-  "appTagline": "PurrPatrol — Emergency Cat Network"
-
-
+  "appTagline": "PurrPatrol — Emergency Cat Network",
+  "signInWithGoogle": "Sign in with Google 🔑",
+  "signOutButton": "Sign Out 🚪"
   
 }

@@ -45,9 +45,8 @@
   "activeRescuerBadge": "Rescatador de gatos activo 🛡️",
   "communityRulesButton": "Reglas de la comunidad 📜",
   "appVersionInfo": "Versión de la app 1.0.0 🐾",
-  "appTagline": "PurrPatrol — Red de emergencia para gatos"
-
-
-
+  "appTagline": "PurrPatrol — Red de emergencia para gatos",
+  "signInWithGoogle": "Iniciar sesión con Google 🔑",
+  "signOutButton": "Cerrar sesión 🚪"
 
 }

@@ -45,7 +45,10 @@
   "activeRescuerBadge": "Активный спасатель котиков 🛡️",
   "communityRulesButton": "Правила сообщества 📜",
   "appVersionInfo": "Версия приложения 1.0.0 🐾",
-  "appTagline": "PurrPatrol — Сеть спасения котиков"
+  "appTagline": "PurrPatrol — Сеть спасения котиков",
+  "signInWithGoogle": "Войти через Google 🔑",
+  "signOutButton": "Выйти из аккаунта 🚪"
+
 
 
 }

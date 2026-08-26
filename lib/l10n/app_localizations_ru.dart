@@ -146,4 +146,10 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get appTagline => 'PurrPatrol — Сеть спасения котиков';
+
+  @override
+  String get signInWithGoogle => 'Войти через Google 🔑';
+
+  @override
+  String get signOutButton => 'Выйти из аккаунта 🚪';
 }

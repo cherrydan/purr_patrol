@@ -375,6 +375,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'PurrPatrol — Emergency Cat Network'**
   String get appTagline;
+
+  /// No description provided for @signInWithGoogle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in with Google 🔑'**
+  String get signInWithGoogle;
+
+  /// No description provided for @signOutButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Out 🚪'**
+  String get signOutButton;
 }
 
 class _AppLocalizationsDelegate

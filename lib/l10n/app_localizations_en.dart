@@ -146,4 +146,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get appTagline => 'PurrPatrol — Emergency Cat Network';
+
+  @override
+  String get signInWithGoogle => 'Sign in with Google 🔑';
+
+  @override
+  String get signOutButton => 'Sign Out 🚪';
 }

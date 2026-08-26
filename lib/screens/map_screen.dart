@@ -323,10 +323,9 @@ class _MapScreenState extends State<MapScreen> {
             ),
             children: [
               TileLayer(
-                urlTemplate:
-                    'https://a.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png',
-                userAgentPackageName: 'com.purrpatrol.purr_patrol',
-              ),
+            urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+            userAgentPackageName: 'com.purrpatrol.purr_patrol',
+          ),
               StreamBuilder<List<CatMarker>>(
                 stream: _catService.getCatMarkersStream(),
                 builder: (context, snapshot) {
