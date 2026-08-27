@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:purr_patrol/screens/auth_gate.dart';
 import 'l10n/app_localizations.dart'; // Наш сгенерированный класс
-import 'screens/main_tab_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
    
 
@@ -44,7 +44,7 @@ class PurrPatrolApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const MainTabScreen(),
+      home: const AuthGate(),
     );
   }
 }
