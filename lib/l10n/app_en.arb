@@ -51,6 +51,9 @@
   "appVersionInfo": "App Version 1.0.0 🐾",
   "appTagline": "PurrPatrol — Emergency Cat Network",
   "signInWithGoogle": "Sign in with Google 🔑",
-  "signOutButton": "Sign Out 🚪"
+  "signOutButton": "Sign Out 🚪",
+  "karmaTitle": "Volunteer Karma",
+  "catsAddedTitle": "Cats on Map"
+
   
 }

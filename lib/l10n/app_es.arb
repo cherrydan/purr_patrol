@@ -47,6 +47,8 @@
   "appVersionInfo": "Versión de la app 1.0.0 🐾",
   "appTagline": "PurrPatrol — Red de emergencia para gatos",
   "signInWithGoogle": "Iniciar sesión con Google 🔑",
-  "signOutButton": "Cerrar sesión 🚪"
+  "signOutButton": "Cerrar sesión 🚪",
+  "karmaTitle": "Karma del voluntario",
+  "catsAddedTitle": "Gatos en el mapa"
 
 }

@@ -152,4 +152,10 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get signOutButton => 'Выйти из аккаунта 🚪';
+
+  @override
+  String get karmaTitle => 'Карма волонтера';
+
+  @override
+  String get catsAddedTitle => 'Котиков на карте';
 }

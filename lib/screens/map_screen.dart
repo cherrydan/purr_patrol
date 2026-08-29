@@ -329,9 +329,9 @@ class _MapScreenState extends State<MapScreen> {
               StreamBuilder<List<CatMarker>>(
                 stream: _catService.getCatMarkersStream(),
                 builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return const MarkerLayer(markers: <Marker>[]);
-                  }
+                  if (snapshot.connectionState == ConnectionState.waiting || !snapshot.hasData) {
+                  return const MarkerLayer(markers: <Marker>[]);
+            }
 
                   final markersFromCloud = snapshot.data ?? [];
 

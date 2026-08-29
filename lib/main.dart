@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:purr_patrol/screens/auth_gate.dart';
@@ -12,6 +13,9 @@ void main() async {
 
   // 🟢 Инициализируем Firebase для Android/iOS
   await Firebase.initializeApp();
+  FirebaseFirestore.instance.settings = const Settings(
+    persistenceEnabled: false,
+  );
 
   runApp(const PurrPatrolApp());
 }

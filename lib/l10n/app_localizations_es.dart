@@ -152,4 +152,10 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get signOutButton => 'Cerrar sesión 🚪';
+
+  @override
+  String get karmaTitle => 'Karma del voluntario';
+
+  @override
+  String get catsAddedTitle => 'Gatos en el mapa';
 }

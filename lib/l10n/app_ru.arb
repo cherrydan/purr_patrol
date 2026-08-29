@@ -47,8 +47,8 @@
   "appVersionInfo": "Версия приложения 1.0.0 🐾",
   "appTagline": "PurrPatrol — Сеть спасения котиков",
   "signInWithGoogle": "Войти через Google 🔑",
-  "signOutButton": "Выйти из аккаунта 🚪"
-
-
+  "signOutButton": "Выйти из аккаунта 🚪",
+  "karmaTitle": "Карма волонтера",
+  "catsAddedTitle": "Котиков на карте"
 
 }

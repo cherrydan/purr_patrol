@@ -1,4 +1,5 @@
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:purr_patrol/l10n/app_localizations.dart';
@@ -85,6 +86,66 @@ class ProfileScreen extends StatelessWidget {
                             style: const TextStyle(color: Colors.red),
                           ),
                         ),
+                        if (user != null) 
+                        StreamBuilder<DocumentSnapshot>(
+                      stream: FirebaseFirestore.instance.collection('users').doc(user.uid).snapshots(),
+                      builder: (context, userSnap) {
+                        int karma = 0;
+                        int catsCount = 0;
+
+                        if (userSnap.hasData && userSnap.data!.exists) {
+                          final userData = userSnap.data!.data() as Map<String, dynamic>?;
+                          karma = userData?['karmaPoints'] ?? 0;
+                          catsCount = userData?['catsAddedCount'] ?? 0;
+                        }
+
+                        // Рендерим плашку со статистикой!
+                        return Padding(
+  padding: const EdgeInsets.only(top: 16.0),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: [
+      // 1. Плашка Кармы 🌟
+      Column(
+        children: [
+          const Icon(Icons.star_rounded, color: Colors.amber, size: 28),
+          const SizedBox(height: 4),
+          Text(
+            '$karma',
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            l10n.karmaTitle,
+            style: const TextStyle(fontSize: 12, color: Colors.grey),
+          ),
+        ],
+      ),
+
+      // Разделитель
+      Container(height: 30, width: 1, color: Colors.grey.shade300),
+
+      // 2. Плашка Котиков 🐱
+      Column(
+        children: [
+          const Icon(Icons.pets_rounded, color: Color(0xFF2ECC71), size: 28),
+          const SizedBox(height: 4),
+          Text(
+            '$catsCount',
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            l10n.catsAddedTitle,
+            style: const TextStyle(fontSize: 12, color: Colors.grey),
+          ),
+        ],
+      ),
+    ],
+  ),
+);
+
+                      },
+                    )
+
                     ],
                   ),
                 ),

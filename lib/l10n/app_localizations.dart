@@ -387,6 +387,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sign Out 🚪'**
   String get signOutButton;
+
+  /// No description provided for @karmaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Volunteer Karma'**
+  String get karmaTitle;
+
+  /// No description provided for @catsAddedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cats on Map'**
+  String get catsAddedTitle;
 }
 
 class _AppLocalizationsDelegate
