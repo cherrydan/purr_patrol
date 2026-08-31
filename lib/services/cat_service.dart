@@ -17,7 +17,16 @@ class CatService {
     try {
       // Превращаем объект CatMarker в Map через метод toMap()
       await _markersCollection.doc(marker.id).set(marker.toMap());
+      if (marker.authorId != 'anonymous') {
+        await FirebaseFirestore.instance.collection('users').doc(marker.authorId).update({ 
+         
+          'karmaPoints': FieldValue.increment(10),
+          'catsAddedCount': FieldValue.increment(1)
+
+         });
+      }
       logger.i("Метка котика успешно сохранена в Firestore: ${marker.title}");
+
     } catch (e) {
       logger.e("Ошибка при сохранении метки котика: $e");
       rethrow;

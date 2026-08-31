@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:purr_patrol/models/cat_enums.dart';
 import 'package:purr_patrol/models/cat_marker.dart';
+import 'package:purr_patrol/services/auth_service.dart';
 import 'package:purr_patrol/services/cat_service.dart';
 import 'package:purr_patrol/widgets/image_picker_widget.dart';
 import '../l10n/app_localizations.dart';
@@ -83,6 +84,9 @@ class _AddCatScreenState extends State<AddCatScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final user = AuthService().currentUser;
+   
+
 
     return Scaffold(
       appBar: AppBar(
@@ -328,7 +332,8 @@ class _AddCatScreenState extends State<AddCatScreen> {
                  imageUrl: imageUrl,
                  status: _selectedStatus, riskLevel: _selectedRiskLevel, 
                  gender: _selectedGender, isChipped: isChipped, isSterilized: isSterilized,
-                 authorId: 'current_user', createdAt: DateTime.now()); // Собрали CatMarker
+                 authorId: user?.uid ?? 'anonymous',
+                 createdAt: DateTime.now()); // Собрали CatMarker
 
                  await CatService().addCatMarker(newCat); // сохранили в Firestore
 
