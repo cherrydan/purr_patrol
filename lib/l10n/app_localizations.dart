@@ -399,6 +399,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cats on Map'**
   String get catsAddedTitle;
+
+  /// No description provided for @rankNewbie.
+  ///
+  /// In en, this message translates to:
+  /// **'Cat Friend 🐾'**
+  String get rankNewbie;
+
+  /// No description provided for @rankGuardian.
+  ///
+  /// In en, this message translates to:
+  /// **'City Guardian 🛡️'**
+  String get rankGuardian;
+
+  /// No description provided for @rankLegend.
+  ///
+  /// In en, this message translates to:
+  /// **'Legendary Rescuer 👑'**
+  String get rankLegend;
 }
 
 class _AppLocalizationsDelegate

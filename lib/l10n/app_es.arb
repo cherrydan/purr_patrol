@@ -49,6 +49,10 @@
   "signInWithGoogle": "Iniciar sesión con Google 🔑",
   "signOutButton": "Cerrar sesión 🚪",
   "karmaTitle": "Karma del voluntario",
-  "catsAddedTitle": "Gatos en el mapa"
+  "catsAddedTitle": "Gatos en el mapa",
+  "rankNewbie": "Amigo de los gatos 🐾",
+  "rankGuardian": "Guardián de la Ciudad 🛡️",
+  "rankLegend": "Rescatador Legendario 👑"
+
 
 }

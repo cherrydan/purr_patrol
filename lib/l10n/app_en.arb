@@ -53,7 +53,11 @@
   "signInWithGoogle": "Sign in with Google 🔑",
   "signOutButton": "Sign Out 🚪",
   "karmaTitle": "Volunteer Karma",
-  "catsAddedTitle": "Cats on Map"
+  "catsAddedTitle": "Cats on Map",
+  "rankNewbie": "Cat Friend 🐾",
+  "rankGuardian": "City Guardian 🛡️",
+  "rankLegend": "Legendary Rescuer 👑"
+
 
   
 }

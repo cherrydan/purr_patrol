@@ -323,7 +323,7 @@ class _AddCatScreenState extends State<AddCatScreen> {
                   imageUrl = await CatService().uploadCatImage(_selectedImage!);
                 }
 
-
+                final bool isEditing = widget.catToEdit != null;
 
                  CatMarker newCat = CatMarker(id: catId, 
                  latitude: double.parse(_latitudeController.text.replaceAll(',', '.')), 
@@ -335,7 +335,7 @@ class _AddCatScreenState extends State<AddCatScreen> {
                  authorId: user?.uid ?? 'anonymous',
                  createdAt: DateTime.now()); // Собрали CatMarker
 
-                 await CatService().addCatMarker(newCat); // сохранили в Firestore
+                 await CatService().addCatMarker(newCat, isEdit: isEditing); // сохранили в Firestore
 
                  
                  if (!context.mounted) return;

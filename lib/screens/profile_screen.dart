@@ -15,6 +15,8 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!; 
     final authService = AuthService();
+    String rankTitle = l10n.rankNewbie;
+    Color rankColor = Colors.green;
      return Scaffold(
       appBar: AppBar(title: Text(l10n.profileTab)),
       body: StreamBuilder<User?>(
@@ -61,7 +63,23 @@ class ProfileScreen extends StatelessWidget {
                         ),
                       ],
                       const SizedBox(height: 10),
-
+                      Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                      decoration: BoxDecoration(
+                        color: rankColor.withValues(alpha: 0.15),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Text(
+                        rankTitle,
+                        style: TextStyle(
+                          color: rankColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                      
                       // 3. Кнопка Входа или Выхода
                       if (user == null)
                         ElevatedButton.icon(
@@ -96,6 +114,17 @@ class ProfileScreen extends StatelessWidget {
                         if (userSnap.hasData && userSnap.data!.exists) {
                           final userData = userSnap.data!.data() as Map<String, dynamic>?;
                           karma = userData?['karmaPoints'] ?? 0;
+                          if (karma >= 150) {
+                            rankTitle = l10n.rankLegend;
+                            rankColor = Colors.amber.shade800;
+                          } else if (karma >= 50) {
+                            rankTitle = l10n.rankGuardian;
+                            rankColor = Colors.blue; 
+                            }
+                           else {
+                            rankTitle = l10n.rankNewbie;
+                            rankColor = Colors.green;
+                          }
                           catsCount = userData?['catsAddedCount'] ?? 0;
                         }
 

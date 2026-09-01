@@ -158,4 +158,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get catsAddedTitle => 'Cats on Map';
+
+  @override
+  String get rankNewbie => 'Cat Friend 🐾';
+
+  @override
+  String get rankGuardian => 'City Guardian 🛡️';
+
+  @override
+  String get rankLegend => 'Legendary Rescuer 👑';
 }

@@ -158,4 +158,13 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get catsAddedTitle => 'Котиков на карте';
+
+  @override
+  String get rankNewbie => 'Начинающий друг 🐾';
+
+  @override
+  String get rankGuardian => 'Хранитель Города 🛡️';
+
+  @override
+  String get rankLegend => 'Легендарный Спасатель 👑';
 }

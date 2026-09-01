@@ -13,11 +13,11 @@ class CatService {
       FirebaseFirestore.instance.collection('cat_markers');
 
   // 🟢 1. Сохраняем новую метку котика в Firestore
-  Future<void> addCatMarker(CatMarker marker) async {
+  Future<void> addCatMarker(CatMarker marker, {bool isEdit = false}) async {
     try {
       // Превращаем объект CatMarker в Map через метод toMap()
       await _markersCollection.doc(marker.id).set(marker.toMap());
-      if (marker.authorId != 'anonymous') {
+      if (!isEdit && marker.authorId != 'anonymous') {
         await FirebaseFirestore.instance.collection('users').doc(marker.authorId).update({ 
          
           'karmaPoints': FieldValue.increment(10),

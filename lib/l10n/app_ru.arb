@@ -49,6 +49,10 @@
   "signInWithGoogle": "Войти через Google 🔑",
   "signOutButton": "Выйти из аккаунта 🚪",
   "karmaTitle": "Карма волонтера",
-  "catsAddedTitle": "Котиков на карте"
+  "catsAddedTitle": "Котиков на карте",
+  "rankNewbie": "Начинающий друг 🐾",
+  "rankGuardian": "Хранитель Города 🛡️",
+  "rankLegend": "Легендарный Спасатель 👑"
+
 
 }
