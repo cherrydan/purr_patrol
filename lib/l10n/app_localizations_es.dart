@@ -167,4 +167,10 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get rankLegend => 'Rescatador Legendario 👑';
+
+  @override
+  String get catStatusRescued => 'Rescatado / Adoptado 🏠🎉';
+
+  @override
+  String get markAsRescuedButton => 'Marcar como rescatado (+50 🌟)';
 }

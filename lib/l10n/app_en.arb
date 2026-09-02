@@ -56,8 +56,8 @@
   "catsAddedTitle": "Cats on Map",
   "rankNewbie": "Cat Friend 🐾",
   "rankGuardian": "City Guardian 🛡️",
-  "rankLegend": "Legendary Rescuer 👑"
-
-
-  
+  "rankLegend": "Legendary Rescuer 👑",
+  "catStatusRescued": "Rescued / Adopted 🏠🎉",
+  "markAsRescuedButton": "Mark as Rescued (+50 🌟)"
+   
 }

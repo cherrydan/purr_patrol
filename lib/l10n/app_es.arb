@@ -52,7 +52,8 @@
   "catsAddedTitle": "Gatos en el mapa",
   "rankNewbie": "Amigo de los gatos 🐾",
   "rankGuardian": "Guardián de la Ciudad 🛡️",
-  "rankLegend": "Rescatador Legendario 👑"
-
-
+  "rankLegend": "Rescatador Legendario 👑",
+  "catStatusRescued": "Rescatado / Adoptado 🏠🎉",
+  "markAsRescuedButton": "Marcar como rescatado (+50 🌟)"
+  
 }

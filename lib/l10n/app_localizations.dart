@@ -417,6 +417,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Legendary Rescuer 👑'**
   String get rankLegend;
+
+  /// No description provided for @catStatusRescued.
+  ///
+  /// In en, this message translates to:
+  /// **'Rescued / Adopted 🏠🎉'**
+  String get catStatusRescued;
+
+  /// No description provided for @markAsRescuedButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark as Rescued (+50 🌟)'**
+  String get markAsRescuedButton;
 }
 
 class _AppLocalizationsDelegate

@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:purr_patrol/models/cat_enums.dart';
 import '../models/cat_marker.dart';
 import 'app_logger.dart';
 import 'dart:io';
@@ -73,6 +74,31 @@ class CatService {
   }
 }
 
+Future<void> markCatAsRescued(CatMarker marker) async {
+
+  // 1. Обновляем статус котика в Firestore
+  try {
+    await _markersCollection.doc(marker.id).update({
+      'status': CatStatus.rescued.name,
+    });
+    logger.i("Котик отмечен как спасенный: ${marker.title}");
+      
+       // 2. Начисляем +50 Кармы волонтеру в коллекции users (напрямую через FirebaseFirestore.instance!)
+      if (marker.authorId != 'anonymous') {
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(marker.authorId)
+            .update({
+          'karmaPoints': FieldValue.increment(50), // 🟢 +50 Очков супер-бонуса!
+        });
+        logger.i("Волонтеру ${marker.authorId} начислено +50 Кармы за спасение!");
+      }
+
+  } catch (e) {
+    logger.e("Ошибка при обновлении статуса котика: $e");
+    rethrow;
+  }
+}
 
 }
 

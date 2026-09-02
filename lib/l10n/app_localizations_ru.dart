@@ -167,4 +167,10 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get rankLegend => 'Легендарный Спасатель 👑';
+
+  @override
+  String get catStatusRescued => 'Спасен / Нашел дом 🏠🎉';
+
+  @override
+  String get markAsRescuedButton => 'Отметить как спасенного (+50 🌟)';
 }

@@ -288,6 +288,32 @@ class _MapScreenState extends State<MapScreen> {
                   ),
                 ),
               ),
+              // Кнопка показа спасения (показываем, если котик еще не спасен):
+              if (cat.status != CatStatus.rescued)
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton.icon(
+                      onPressed: () async {
+                        await _catService.markCatAsRescued(cat);
+                        if (!context.mounted) return;
+                        Navigator.pop(context); // Закрываем карточку
+                      },
+                      icon: const Icon(Icons.home_rounded),
+                      label: Text(l10n.markAsRescuedButton),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.purple,
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
             ],
           ),
         );

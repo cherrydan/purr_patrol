@@ -3,6 +3,7 @@ enum CatStatus {
   needsFood,
   injured,
   lostPet,
+  rescued,
 }
 
 enum RiskLevel {

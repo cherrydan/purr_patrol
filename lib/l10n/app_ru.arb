@@ -52,7 +52,7 @@
   "catsAddedTitle": "Котиков на карте",
   "rankNewbie": "Начинающий друг 🐾",
   "rankGuardian": "Хранитель Города 🛡️",
-  "rankLegend": "Легендарный Спасатель 👑"
-
-
+  "rankLegend": "Легендарный Спасатель 👑",
+  "catStatusRescued": "Спасен / Нашел дом 🏠🎉",
+  "markAsRescuedButton": "Отметить как спасенного (+50 🌟)"
 }
