@@ -1,8 +1,13 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:purr_patrol/services/auth_service.dart';
+
+class MockFirebaseFirestore extends Mock implements FirebaseFirestore {}
+   
+
 
 // 🟢 1. Мокаем классы Firebase и Google Sign-In
 class MockFirebaseAuth extends Mock implements FirebaseAuth {}
@@ -26,16 +31,24 @@ void main() {
   late MockFirebaseAuth mockFirebaseAuth;
   late MockGoogleSignIn mockGoogleSignIn;
   late AuthService authService;
+  late MockFirebaseFirestore mockFirestore;
+   
+
 
   // 🟢 3. Сбрасываем моки перед каждым тестом
-  setUp(() {
-    mockFirebaseAuth = MockFirebaseAuth();
-    mockGoogleSignIn = MockGoogleSignIn();
-    
+   setUp(() {
+     mockFirebaseAuth = MockFirebaseAuth();
+     mockGoogleSignIn = MockGoogleSignIn();
+     mockFirestore = MockFirebaseFirestore(); // 🟢 Создаем мок Firestore
+
      authService = AuthService(
-      auth: mockFirebaseAuth,
-      googleSignIn: mockGoogleSignIn,
-    );});
+       auth: mockFirebaseAuth,
+       googleSignIn: mockGoogleSignIn,
+       firestore: mockFirestore, // 🟢 Передаем мок в сервис!
+     );
+   });
+   
+
 
   // 🟢 5. Напишем наш первый тестовый кейс!
   group('AuthService', () {
