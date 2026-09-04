@@ -376,6 +376,9 @@ class _MapScreenState extends State<MapScreen> {
                       } else if (cat.status == CatStatus.lostPet) {
                         markerColor = Colors.amber;
                       }
+                      if (cat.status == CatStatus.rescued) {
+                        markerColor = Colors.deepPurple; //Ахахах, роцк 
+                      }
 
                       return Marker(
                         point: LatLng(cat.latitude, cat.longitude),
@@ -413,11 +416,13 @@ class _MapScreenState extends State<MapScreen> {
                                 ),
                               ],
                             ),
-                            child: const Icon(
-                              Icons.pets_rounded,
-                              color: Colors.white,
-                              size: 20,
-                            ),
+                            child: Icon(
+                            cat.status == CatStatus.rescued
+                                ? Icons.home_rounded
+                                : Icons.pets_rounded,
+                            color: Colors.white,
+                            size: 20,
+                          ),
                           ),
                         ),
                       );
@@ -500,7 +505,15 @@ class _MapScreenState extends State<MapScreen> {
                       },
                     ),
                     const SizedBox(width: 8),
-
+                    ChoiceChip(
+                      label: Text(l10n.catStatusRescued),
+                      selected: _selectedFilterStatus == CatStatus.rescued,
+                      onSelected: (selected) {
+                        setState(() {
+                          _selectedFilterStatus =
+                              selected ? CatStatus.rescued : null;
+                        });
+                      })
                    
                   ],
                 ),

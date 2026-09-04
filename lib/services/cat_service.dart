@@ -65,11 +65,11 @@ class CatService {
       logger.i("Photo uploaded to Cloudinary: $imageUrl");
       return imageUrl;
     } else {
-      logger.e("Failed to upload to Cloudinary. Status: ${response.statusCode}");
+      logger.e("Ошибка при загрузке на Cloudinary. Статус-код: ${response.statusCode}");
       return null;
     }
   } catch (e) {
-    logger.e("Error uploading to Cloudinary: $e");
+    logger.e("Ошибка при загрузке на Cloudinary: $e");
     return null;
   }
 }
