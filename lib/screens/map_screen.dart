@@ -3,6 +3,7 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:purr_patrol/services/action_service.dart';
 
 import '../models/cat_marker.dart';
 import '../models/cat_enums.dart';
@@ -273,8 +274,40 @@ class _MapScreenState extends State<MapScreen> {
                 width: double.infinity,
                 child: ElevatedButton.icon(
                   onPressed: () {
-                    Navigator.pop(context);
-                    logger.i("Нажата кнопка помощи для: ${cat.title}");
+                    Navigator.pop(context); // Закрываем карточку котика
+
+                    showModalBottomSheet(
+                      context: context,
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                      ),
+                      builder: (modalContext) => SafeArea(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            ListTile(
+                              leading: const Icon(Icons.directions_rounded, color: Colors.blue),
+                              title: Text(l10n.openDirections),
+                              onTap: () {
+                                Navigator.pop(modalContext);
+                                ActionService.openMapDirections(cat.latitude, cat.longitude);
+                              },
+                            ),
+                            ListTile(
+                              leading: const Icon(Icons.share_rounded, color: Colors.green),
+                              title: Text(l10n.shareCat),
+                              onTap: () {
+                                Navigator.pop(modalContext);
+                                ActionService.shareCatInfo(cat, l10n);
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+
+
+                      logger.i("Нажата кнопка помощи для: ${cat.title}");
                   },
                   icon: const Icon(Icons.favorite_rounded),
                   label: Text(l10n.helpTheCatButton),

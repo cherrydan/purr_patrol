@@ -429,6 +429,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Mark as Rescued (+50 🌟)'**
   String get markAsRescuedButton;
+
+  /// No description provided for @openDirections.
+  ///
+  /// In en, this message translates to:
+  /// **'Get Directions 📍'**
+  String get openDirections;
+
+  /// No description provided for @shareCat.
+  ///
+  /// In en, this message translates to:
+  /// **'Share 📲'**
+  String get shareCat;
+
+  /// No description provided for @shareHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'🐾 PurrPatrol: A cat needs help!'**
+  String get shareHeader;
+
+  /// No description provided for @shareTitleLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'📌 Title'**
+  String get shareTitleLabel;
+
+  /// No description provided for @shareDescriptionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'📝 Description'**
+  String get shareDescriptionLabel;
+
+  /// No description provided for @shareCoordsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'📍 Coordinates'**
+  String get shareCoordsLabel;
+
+  /// No description provided for @shareOpenMapsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Open in Google Maps'**
+  String get shareOpenMapsLabel;
 }
 
 class _AppLocalizationsDelegate

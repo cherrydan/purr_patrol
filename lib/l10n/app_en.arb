@@ -58,6 +58,15 @@
   "rankGuardian": "City Guardian 🛡️",
   "rankLegend": "Legendary Rescuer 👑",
   "catStatusRescued": "Rescued / Adopted 🏠🎉",
-  "markAsRescuedButton": "Mark as Rescued (+50 🌟)"
+  "markAsRescuedButton": "Mark as Rescued (+50 🌟)",
+  "openDirections": "Get Directions 📍",
+  "shareCat": "Share 📲",
+  "shareHeader": "🐾 PurrPatrol: A cat needs help!",
+  "shareTitleLabel": "📌 Title",
+  "shareDescriptionLabel": "📝 Description",
+  "shareCoordsLabel": "📍 Coordinates",
+  "shareOpenMapsLabel": "Open in Google Maps"
+
+
    
 }

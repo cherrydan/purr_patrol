@@ -54,5 +54,14 @@
   "rankGuardian": "Хранитель Города 🛡️",
   "rankLegend": "Легендарный Спасатель 👑",
   "catStatusRescued": "Спасен / Нашел дом 🏠🎉",
-  "markAsRescuedButton": "Отметить как спасенного (+50 🌟)"
+  "markAsRescuedButton": "Отметить как спасенного (+50 🌟)",
+  "openDirections": "Проложить маршрут 📍",
+  "shareCat": "Поделиться 📲",
+  "shareHeader": "🐾 PurrPatrol: Котику нужна помощь!",
+  "shareTitleLabel": "📌 Название",
+  "shareDescriptionLabel": "📝 Описание",
+  "shareCoordsLabel": "📍 Координаты",
+  "shareOpenMapsLabel": "Открыть в Google Maps"
+
+
 }

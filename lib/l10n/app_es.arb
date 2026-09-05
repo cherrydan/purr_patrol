@@ -54,6 +54,15 @@
   "rankGuardian": "Guardián de la Ciudad 🛡️",
   "rankLegend": "Rescatador Legendario 👑",
   "catStatusRescued": "Rescatado / Adoptado 🏠🎉",
-  "markAsRescuedButton": "Marcar como rescatado (+50 🌟)"
+  "markAsRescuedButton": "Marcar como rescatado (+50 🌟)",
+  "openDirections": "Obtener indicaciones 📍",
+  "shareCat": "Compartir 📲",
+  "shareHeader": "🐾 PurrPatrol: ¡Un gato necesita ayuda!",
+  "shareTitleLabel": "📌 Título",
+  "shareDescriptionLabel": "📝 Descripción",
+  "shareCoordsLabel": "📍 Coordenadas",
+  "shareOpenMapsLabel": "Abrir en Google Maps"
+
+
   
 }

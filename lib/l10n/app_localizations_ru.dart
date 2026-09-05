@@ -173,4 +173,25 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get markAsRescuedButton => 'Отметить как спасенного (+50 🌟)';
+
+  @override
+  String get openDirections => 'Проложить маршрут 📍';
+
+  @override
+  String get shareCat => 'Поделиться 📲';
+
+  @override
+  String get shareHeader => '🐾 PurrPatrol: Котику нужна помощь!';
+
+  @override
+  String get shareTitleLabel => '📌 Название';
+
+  @override
+  String get shareDescriptionLabel => '📝 Описание';
+
+  @override
+  String get shareCoordsLabel => '📍 Координаты';
+
+  @override
+  String get shareOpenMapsLabel => 'Открыть в Google Maps';
 }

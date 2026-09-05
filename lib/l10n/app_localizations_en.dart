@@ -173,4 +173,25 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get markAsRescuedButton => 'Mark as Rescued (+50 🌟)';
+
+  @override
+  String get openDirections => 'Get Directions 📍';
+
+  @override
+  String get shareCat => 'Share 📲';
+
+  @override
+  String get shareHeader => '🐾 PurrPatrol: A cat needs help!';
+
+  @override
+  String get shareTitleLabel => '📌 Title';
+
+  @override
+  String get shareDescriptionLabel => '📝 Description';
+
+  @override
+  String get shareCoordsLabel => '📍 Coordinates';
+
+  @override
+  String get shareOpenMapsLabel => 'Open in Google Maps';
 }
